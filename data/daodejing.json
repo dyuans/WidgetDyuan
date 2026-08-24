@@ -1,0 +1,221 @@
+{
+  "_comment": "道德经每日一句的内容源。原文依通行王弼本，拼音与白话解释为配读。直接增删 verses 条目即可。",
+  "verses": [
+    {
+      "text": "道可道，非常道；名可名，非常名。",
+      "pinyin": "dào kě dào, fēi cháng dào; míng kě míng, fēi cháng míng.",
+      "chapter": "第一章",
+      "explain": "能用言语说尽的道，就不是那永恒之道；能被命名的名，也不是那永恒之名。真正的「道」，超越语言。"
+    },
+    {
+      "text": "上善若水。水善利万物而不争。",
+      "pinyin": "shàng shàn ruò shuǐ. shuǐ shàn lì wàn wù ér bù zhēng.",
+      "chapter": "第八章",
+      "explain": "最高的善像水。水滋养万物却不与之相争，甘居众人厌恶的低处，所以最接近于道。"
+    },
+    {
+      "text": "致虚极，守静笃。",
+      "pinyin": "zhì xū jí, shǒu jìng dǔ.",
+      "chapter": "第十六章",
+      "explain": "让心达到极度的空明，坚守内在的宁静。唯有虚而静，才能看清万物的本来面目。"
+    },
+    {
+      "text": "太上，不知有之。",
+      "pinyin": "tài shàng, bù zhī yǒu zhī.",
+      "chapter": "第十七章",
+      "explain": "最好的治理者，百姓几乎感觉不到他的存在。最高明的领导，是不着痕迹的。"
+    },
+    {
+      "text": "见素抱朴，少私寡欲。",
+      "pinyin": "jiàn sù bào pǔ, shǎo sī guǎ yù.",
+      "chapter": "第十九章",
+      "explain": "保持本色，守住质朴，减少私心，降低欲望。回归简单，内心反而更安定。"
+    },
+    {
+      "text": "曲则全，枉则直。",
+      "pinyin": "qū zé quán, wǎng zé zhí.",
+      "chapter": "第二十二章",
+      "explain": "懂得委曲反而能保全，懂得弯曲反而能伸直。会退让、会变通的人，往往走得更远。"
+    },
+    {
+      "text": "夫唯不争，故天下莫能与之争。",
+      "pinyin": "fú wéi bù zhēng, gù tiān xià mò néng yǔ zhī zhēng.",
+      "chapter": "第二十二章",
+      "explain": "正因为不与人争，所以天下没有谁能争得过他。不争，是一种更高明的「赢」。"
+    },
+    {
+      "text": "企者不立，跨者不行。",
+      "pinyin": "qǐ zhě bù lì, kuà zhě bù xíng.",
+      "chapter": "第二十四章",
+      "explain": "踮脚想站得更高，反而站不稳；迈大步想走得更快，反而走不远。急于求成，难以持久。"
+    },
+    {
+      "text": "人法地，地法天，天法道，道法自然。",
+      "pinyin": "rén fǎ dì, dì fǎ tiān, tiān fǎ dào, dào fǎ zì rán.",
+      "chapter": "第二十五章",
+      "explain": "人效法地，地效法天，天效法道，而道效法它本来的样子。顺其自然，是最高的法则。"
+    },
+    {
+      "text": "重为轻根，静为躁君。",
+      "pinyin": "zhòng wéi qīng gēn, jìng wéi zào jūn.",
+      "chapter": "第二十六章",
+      "explain": "稳重是轻率的根基，宁静是浮躁的主宰。心越定，越不容易被外界扰乱。"
+    },
+    {
+      "text": "善行无辙迹。",
+      "pinyin": "shàn xíng wú zhé jì.",
+      "chapter": "第二十七章",
+      "explain": "真正善于行走的人，不留下车辙痕迹。做得好的事，往往不事张扬、不着痕迹。"
+    },
+    {
+      "text": "知人者智，自知者明。",
+      "pinyin": "zhī rén zhě zhì, zì zhī zhě míng.",
+      "chapter": "第三十三章",
+      "explain": "能了解别人是有智慧，能认清自己才是真正通透。看清自己，比看懂别人更难。"
+    },
+    {
+      "text": "胜人者有力，自胜者强。",
+      "pinyin": "shèng rén zhě yǒu lì, zì shèng zhě qiáng.",
+      "chapter": "第三十三章",
+      "explain": "能战胜别人只算有力量，能战胜自己的欲望与惰性，才是真正的强大。"
+    },
+    {
+      "text": "知足者富。",
+      "pinyin": "zhī zú zhě fù.",
+      "chapter": "第三十三章",
+      "explain": "懂得满足的人才是真正的富有。富足不在于拥有多少，而在于内心是否知足。"
+    },
+    {
+      "text": "柔弱胜刚强。",
+      "pinyin": "róu ruò shèng gāng qiáng.",
+      "chapter": "第三十六章",
+      "explain": "柔弱反而能胜过刚强。水至柔，却能穿石；以柔克刚，是一种深远的智慧。"
+    },
+    {
+      "text": "道常无为而无不为。",
+      "pinyin": "dào cháng wú wéi ér wú bù wéi.",
+      "chapter": "第三十七章",
+      "explain": "道总是顺任自然、不刻意妄为，却又没有什么事是它做不成的。不强求，反而水到渠成。"
+    },
+    {
+      "text": "反者道之动，弱者道之用。",
+      "pinyin": "fǎn zhě dào zhī dòng, ruò zhě dào zhī yòng.",
+      "chapter": "第四十章",
+      "explain": "向相反方向转化，是道的运动规律；守持柔弱，是道的作用方式。物极必反，柔弱长存。"
+    },
+    {
+      "text": "大器晚成，大音希声，大象无形。",
+      "pinyin": "dà qì wǎn chéng, dà yīn xī shēng, dà xiàng wú xíng.",
+      "chapter": "第四十一章",
+      "explain": "最贵重的器物往往最后成就，最大的声音听似无声，最大的形象反而没有定形。真正的大成，常常不张扬。"
+    },
+    {
+      "text": "知足不辱，知止不殆。",
+      "pinyin": "zhī zú bù rǔ, zhī zhǐ bù dài.",
+      "chapter": "第四十四章",
+      "explain": "懂得满足就不会受辱，懂得适可而止就不会陷入危险。欲望，要有边界。"
+    },
+    {
+      "text": "大成若缺，其用不弊。",
+      "pinyin": "dà chéng ruò quē, qí yòng bù bì.",
+      "chapter": "第四十五章",
+      "explain": "最完美的东西，看上去好像有缺憾，但它的作用永不衰竭。留有余地，反而长久。"
+    },
+    {
+      "text": "祸莫大于不知足。",
+      "pinyin": "huò mò dà yú bù zhī zú.",
+      "chapter": "第四十六章",
+      "explain": "最大的祸患，莫过于不知满足。贪欲不止，灾祸难息。"
+    },
+    {
+      "text": "知足之足，常足矣。",
+      "pinyin": "zhī zú zhī zú, cháng zú yǐ.",
+      "chapter": "第四十六章",
+      "explain": "懂得满足而带来的满足，才是长久的满足。心若知足，便永远富足。"
+    },
+    {
+      "text": "为学日益，为道日损。",
+      "pinyin": "wéi xué rì yì, wéi dào rì sǔn.",
+      "chapter": "第四十八章",
+      "explain": "求学问，知识一天天增加；求大道，反而要一天天减去成见与杂念。做减法，也是一种修行。"
+    },
+    {
+      "text": "知者不言，言者不知。",
+      "pinyin": "zhī zhě bù yán, yán zhě bù zhī.",
+      "chapter": "第五十六章",
+      "explain": "真正懂得的人不轻易多言，夸夸其谈的人往往并不真懂。少言，是一种深度。"
+    },
+    {
+      "text": "祸兮福之所倚，福兮祸之所伏。",
+      "pinyin": "huò xī fú zhī suǒ yǐ, fú xī huò zhī suǒ fú.",
+      "chapter": "第五十八章",
+      "explain": "灾祸里依傍着福气，福气里潜藏着灾祸。好坏并非绝对、会相互转化，所以顺境别得意，逆境别绝望。"
+    },
+    {
+      "text": "图难于其易，为大于其细。",
+      "pinyin": "tú nán yú qí yì, wéi dà yú qí xì.",
+      "chapter": "第六十三章",
+      "explain": "解决难题，要趁它还容易时入手；成就大事，要从它还细小时着手。化难为易，化大为小。"
+    },
+    {
+      "text": "天下难事，必作于易；天下大事，必作于细。",
+      "pinyin": "tiān xià nán shì, bì zuò yú yì; tiān xià dà shì, bì zuò yú xì.",
+      "chapter": "第六十三章",
+      "explain": "天下的难事，一定从容易处做起；天下的大事，一定从细微处开始。再大的事，也始于眼前的小步。"
+    },
+    {
+      "text": "合抱之木，生于毫末。",
+      "pinyin": "hé bào zhī mù, shēng yú háo mò.",
+      "chapter": "第六十四章",
+      "explain": "需要双臂合抱的大树，是从细小的萌芽长起来的。伟大的事物都始于微小，贵在积累。"
+    },
+    {
+      "text": "千里之行，始于足下。",
+      "pinyin": "qiān lǐ zhī xíng, shǐ yú zú xià.",
+      "chapter": "第六十四章",
+      "explain": "千里的远行，从脚下第一步开始。再宏大的目标，也要从眼前最小的行动做起。"
+    },
+    {
+      "text": "慎终如始，则无败事。",
+      "pinyin": "shèn zhōng rú shǐ, zé wú bài shì.",
+      "chapter": "第六十四章",
+      "explain": "做事到快结束时，仍像开始时一样谨慎，就不会失败。许多事，都败在最后的松懈上。"
+    },
+    {
+      "text": "江海所以能为百谷王者，以其善下之。",
+      "pinyin": "jiāng hǎi suǒ yǐ néng wéi bǎi gǔ wáng zhě, yǐ qí shàn xià zhī.",
+      "chapter": "第六十六章",
+      "explain": "江海之所以能成为百川汇聚的王者，是因为它甘居低处。越谦下，越能容纳，越能成就。"
+    },
+    {
+      "text": "我有三宝，持而保之：一曰慈，二曰俭，三曰不敢为天下先。",
+      "pinyin": "wǒ yǒu sān bǎo, chí ér bǎo zhī: yī yuē cí, èr yuē jiǎn, sān yuē bù gǎn wéi tiān xià xiān.",
+      "chapter": "第六十七章",
+      "explain": "我有三件珍宝，一直持守：一是慈爱，二是俭朴，三是不争先逞强。这是老子的处世之宝。"
+    },
+    {
+      "text": "天网恢恢，疏而不失。",
+      "pinyin": "tiān wǎng huī huī, shū ér bù shī.",
+      "chapter": "第七十三章",
+      "explain": "天道像一张广大的网，看似稀疏，却不会漏掉什么。行事自有因果，不必心存侥幸。"
+    },
+    {
+      "text": "天下莫柔弱于水，而攻坚强者莫之能胜。",
+      "pinyin": "tiān xià mò róu ruò yú shuǐ, ér gōng jiān qiáng zhě mò zhī néng shèng.",
+      "chapter": "第七十八章",
+      "explain": "天下没有比水更柔弱的，但攻克坚强的东西，没有能胜过水的。至柔，藏着至刚的力量。"
+    },
+    {
+      "text": "信言不美，美言不信。",
+      "pinyin": "xìn yán bù měi, měi yán bù xìn.",
+      "chapter": "第八十一章",
+      "explain": "真实可信的话往往不漂亮，漂亮动听的话往往不真实。听话要听其真，而非其华。"
+    },
+    {
+      "text": "圣人不积，既以为人，己愈有。",
+      "pinyin": "shèng rén bù jī, jì yǐ wèi rén, jǐ yù yǒu.",
+      "chapter": "第八十一章",
+      "explain": "有道的人不为自己囤积，越是尽力帮助别人，自己反而越充实丰盈。给予，是另一种获得。"
+    }
+  ]
+}
