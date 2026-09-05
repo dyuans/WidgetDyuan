@@ -9,7 +9,7 @@ const Core = importModule("WidgetCore");
 
 // ─── 数据源（改成你自己的仓库地址）──────────────────────────────
 const DATA_URL =
-  "https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/data/daodejing.json";
+  "https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/daodejing.json";
 
 // ─── 配色（墨底 · 青玉 + 朱砂印）────────────────────────────────
 const THEME = {

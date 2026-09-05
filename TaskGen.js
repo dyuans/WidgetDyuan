@@ -12,7 +12,7 @@ const Core = importModule("WidgetCore");
 const TaskStore = importModule("TaskStore");
 
 // ─── 配置 ──────────────────────────────────────────────────────
-const REPO = "https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/data/";
+const REPO = "https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/";
 
 const LIST_NAME = "地球Online";   // 专用提醒事项列表，跟你真正的待办隔离
 const TARGET = 3;                  // 今日任务总数（含日历已有的安排）

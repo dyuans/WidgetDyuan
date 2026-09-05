@@ -12,7 +12,7 @@ const TaskStore = importModule("TaskStore");
 
 // ─── 配置 ──────────────────────────────────────────────────────
 const DATA_URL =
-  "https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/data/daily-restart.json";
+  "https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/daily-restart.json";
 
 const LIST_NAME = "地球Online";  // 必须与 TaskGen.js 里的一致
 const SHOW_TASKS = true;          // 想只看名言就改成 false

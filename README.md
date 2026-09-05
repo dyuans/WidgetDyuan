@@ -52,12 +52,12 @@
 把 `data/` 传到一个 GitHub 仓库，打开任一 JSON → 点右上角 **Raw** → 复制 URL，形如：
 
 ```
-https://raw.githubusercontent.com/你的用户名/你的仓库/main/data/daily-restart.json
+https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/daily-restart.json
 ```
 
 把 `DailyRestart.js` 的 `DATA_URL`、`DaoDeJing.js` 的 `DATA_URL`、`TaskGen.js` 的 `REPO` 都改成你自己的。
 
-> 国内网络不稳可换 jsDelivr：`https://cdn.jsdelivr.net/gh/用户名/仓库@main/data/xxx.json`。代价是 CDN 缓存更久，改完生效更慢。
+> 国内网络不稳可换 jsDelivr：`https://cdn.jsdelivr.net/gh/dyuans/WidgetDyuan@main/data/xxx.json`。代价是 CDN 缓存更久，改完生效更慢。
 
 ### 2. 放进 Scriptable
 
