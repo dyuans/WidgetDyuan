@@ -112,9 +112,40 @@ const loaded = {};
 for (const [k, f] of Object.entries(files)) {
   loaded[k] = JSON.parse(fs.readFileSync(path.join(__dirname, f), "utf8"));
 }
-ok(loaded["daily-restart"].quotes.length === 30, "名言 30 条");
-ok(loaded["daily-restart"].goals.length === 25, "最小目标 25 条");
-ok(loaded["daodejing"].verses.length === 36, "道德经 36 条");
+const QUOTES = loaded["daily-restart"].quotes;
+const MOODS = ["起身", "允许", "清醒", "距离", "有趣", "具体"];
+console.log("   名言 %d 条 / 最小目标 %d 条 / 道德经 %d 条",
+  QUOTES.length, loaded["daily-restart"].goals.length, loaded["daodejing"].verses.length);
+
+ok(QUOTES.length >= 300, "名言 ≥300 条");
+ok(QUOTES.every((q) => q.text && q.src && q.mood), "每条都有正文、出处、情绪分类");
+ok(QUOTES.every((q) => MOODS.indexOf(q.mood) >= 0), "mood 都在六类之内");
+ok(new Set(QUOTES.map((q) => q.text)).size === QUOTES.length, "正文无重复");
+
+const tooLong = QUOTES.filter((q) => q.text.length > 22);
+ok(tooLong.length === 0, "正文都 ≤22 字" + (tooLong.length ? "（超长：" + tooLong[0].text + "）" : ""));
+
+// 出处必须可考：不允许「网络流传」「改编」「自撰」这类含糊来源
+const BANNED = ["网络", "流传", "改编", "意境", "自撰", "佚名", "格言", "心理学", "感悟"];
+const vague = QUOTES.filter((q) => BANNED.some((b) => q.src.includes(b)));
+ok(vague.length === 0, "没有含糊/杜撰的出处" + (vague.length ? "（如：" + vague[0].src + "）" : ""));
+
+const moodCount = {};
+QUOTES.forEach((q) => { moodCount[q.mood] = (moodCount[q.mood] || 0) + 1; });
+ok(MOODS.every((m) => moodCount[m] >= 20), "六类每类都 ≥20 条：" + JSON.stringify(moodCount));
+
+// ── 轮转覆盖：条目数超过 365 时，按年内天数取模会漏掉一批 ──
+const N = QUOTES.length;
+const newIdx = new Set(), oldIdx = new Set();
+for (let i = 0; i < N; i++) {
+  const d = new Date(2026, 11, 20 + i);
+  newIdx.add(Core.absoluteDay(d) % N);
+  oldIdx.add(Core.dayOfYear(d) % N);
+}
+ok(newIdx.size === N, `${N} 天内每条都会轮到，一条不漏`);
+ok(oldIdx.size < N, `回归对照：旧的按年内天数取模只能覆盖 ${oldIdx.size}/${N} 条`);
+ok(Core.absoluteDay(new Date(2027, 0, 1)) - Core.absoluteDay(new Date(2026, 11, 31)) === 1,
+   "跨年时天数连续递增，不归零");
 
 const pool = loaded["tasks-earth"].tasks.concat(loaded["tasks-evil"].tasks);
 console.log("   地球Online %d 条 / 恶女Online %d 条 / 合计 %d 条",
@@ -167,9 +198,11 @@ ok(tasks.filter((t) => t.done).length === 1, "已完成 1 条，状态正确");
 // 场景 D：日历已有 2 个安排 → 只补 1 条
 fs.rmSync(TMP, { recursive: true, force: true });
 store.reminders = [];
+// 用相对当前时间的偏移，避免用例在一天中不同时刻跑出不同结果
+const hoursFromNow = (h) => new Date(Date.now() + h * 3600 * 1000);
 store.events = [
-  { title: "10:00 部门周会", isAllDay: false, startDate: todayAt(10), endDate: todayAt(11) },
-  { title: "19:00 牙医", isAllDay: false, startDate: todayAt(19), endDate: todayAt(20) },
+  { title: "已开完的周会", isAllDay: false, startDate: hoursFromNow(-2), endDate: hoursFromNow(-1) },
+  { title: "还没到的牙医", isAllDay: false, startDate: hoursFromNow(1), endDate: hoursFromNow(2) },
   { title: "同事生日", isAllDay: true, startDate: todayAt(0), endDate: todayAt(23) },
 ];
 res = await TaskStore.generateToday({ listName: LIST, pool, target: 3 });
@@ -180,11 +213,12 @@ tasks = await TaskStore.readTodayTasks({ listName: LIST });
 ok(tasks.length === 3 && tasks[0].kind === "主线" && tasks[2].kind === "支线",
    "主线（日历）排在前，支线（生成）排在后");
 ok(tasks[0].done === true, "已经结束的会议自动标记为完成");
+ok(tasks[1].done === false, "还没开始的日程不算完成");
 
 // 场景 E：日历已排满 3 条 → 一条都不补
 fs.rmSync(TMP, { recursive: true, force: true });
 store.reminders = [];
-store.events.push({ title: "21:00 健身", isAllDay: false, startDate: todayAt(21), endDate: todayAt(22) });
+store.events.push({ title: "晚上的健身", isAllDay: false, startDate: hoursFromNow(3), endDate: hoursFromNow(4) });
 res = await TaskStore.generateToday({ listName: LIST, pool, target: 3 });
 ok(res.added === 0, "今天已经够忙 → 不再发任务");
 

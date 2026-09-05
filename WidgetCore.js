@@ -86,6 +86,17 @@ function dayOfYear(date) {
   return Math.floor((d - start) / (1000 * 60 * 60 * 24));
 }
 
+/**
+ * 连续递增的「第几天」，跨年不归零。
+ * 用 dayOfYear 取模会有两个毛病：条目数超过 365 时，多出来的永远轮不到；
+ * 而且每年同一天显示同一条。用绝对天数就没有这两个问题。
+ */
+function absoluteDay(date) {
+  const d = date || new Date();
+  const localMidnight = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  return Math.floor(localMidnight.getTime() / 86400000);
+}
+
 /** YYYY-MM-DD，用作「今天是否已生成」的标记 */
 function dateKey(date) {
   const d = date || new Date();
@@ -93,10 +104,11 @@ function dateKey(date) {
   return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
 }
 
-/** 顺序轮转：第 N 天固定取第 N 条 */
+/** 顺序轮转：每天前进一条，走完整个列表再从头开始，不漏条目 */
 function pickOfDay(list, offset) {
   if (!Array.isArray(list) || list.length === 0) return null;
-  return list[(dayOfYear() + (offset || 0)) % list.length];
+  const i = (absoluteDay() + (offset || 0)) % list.length;
+  return list[(i + list.length) % list.length]; // 防负数
 }
 
 /** mulberry32：小而够用的确定性伪随机数生成器 */
@@ -122,8 +134,7 @@ function pickRandomOfDay(pool, n, exclude, keyOf) {
   if (!Array.isArray(pool) || pool.length === 0) return [];
   const key = keyOf || ((x) => (x && x.text) || String(x));
   const avoid = new Set(exclude || []);
-  const now = new Date();
-  const rand = seededRandom(now.getFullYear() * 1000 + dayOfYear(now));
+  const rand = seededRandom(absoluteDay());
 
   // Fisher-Yates，用同一个种子流
   const shuffled = pool.slice();
@@ -455,6 +466,6 @@ function render(widget, view, theme, family) {
 
 module.exports = {
   loadData, loadLocal, saveLocal,
-  dayOfYear, dateKey, pickOfDay, pickRandomOfDay, seededRandom,
+  dayOfYear, absoluteDay, dateKey, pickOfDay, pickRandomOfDay, seededRandom,
   render, THEME_DEFAULTS,
 };
