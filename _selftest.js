@@ -114,8 +114,8 @@ for (const [k, f] of Object.entries(files)) {
 }
 const QUOTES = loaded["daily-restart"].quotes;
 const MOODS = ["起身", "允许", "清醒", "距离", "有趣", "具体"];
-console.log("   名言 %d 条 / 最小目标 %d 条 / 道德经 %d 条",
-  QUOTES.length, loaded["daily-restart"].goals.length, loaded["daodejing"].verses.length);
+console.log("   名言 %d 条 / 最小目标 %d 条 / 道德经 %d 章",
+  QUOTES.length, loaded["daily-restart"].goals.length, loaded["daodejing"].chapters.length);
 
 ok(QUOTES.length >= 300, "名言 ≥300 条");
 ok(QUOTES.every((q) => q.text && q.src && q.mood), "每条都有正文、出处、情绪分类");
@@ -279,31 +279,75 @@ Core.render(new ListWidget(), {
 }, {}, "medium");
 ok(drawn.indexOf("🥤 今天多喝一杯水") >= 0, "一条任务都没有时，优雅退回「今日目标」");
 
-// ════════ 5. 回归：道德经组件没改过，但依赖被重写的 WidgetCore ════════
-console.log("\n【道德经组件回归】");
-const v = loaded["daodejing"].verses.reduce((a, b) => (b.pinyin.length > a.pinyin.length ? b : a));
-console.log("   用最长的一条测：%s（拼音 %d 字符）", v.chapter, v.pinyin.length);
+// ════════ 5. 道德经全本 81 章 ════════
+console.log("\n【道德经全本】");
+const CH = loaded["daodejing"].chapters;
+const han = (s) => (s.match(/[一-鿿]/g) || []).length;
 
-const ddView = {
-  icon: "☷", title: "道德经 · 每日一句", lockTitle: "道德经 · " + v.chapter,
-  primary: "「" + v.text + "」", secondary: v.pinyin, detail: v.explain,
-  tag: v.chapter, tagLabel: "出处", tagAccent: false, lockBottom: v.pinyin,
-};
+ok(CH.length === 81, "共 81 章");
+ok(CH.map((c) => c.chapter).join() === Array.from({ length: 81 }, (_, i) => i + 1).join(),
+   "章号 1-81 连续无缺");
+ok(CH.every((c) => c.title && c.text && c.pinyin && c.explain && c.key),
+   "每章都有 章题/原文/拼音/白话/摘句");
+
+const total = CH.reduce((s, c) => s + han(c.text), 0);
+ok(total > 5000 && total < 5600, `全书 ${total} 字，与「五千言」相符`);
+
+// 摘句必须真出自本章原文——否则组件上会显示一句书里没有的话
+const fake = CH.filter((c) => c.text.indexOf(c.key) < 0);
+ok(fake.length === 0, "摘句都是本章原文的子串" + (fake.length ? `（第${fake[0].chapter}章除外）` : ""));
+
+// 拼音音节数必须与汉字数一一对应
+const PY = /[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g;
+const mis = CH.filter((c) => han(c.text) !== (c.pinyin.match(PY) || []).length);
+ok(mis.length === 0, "逐章拼音音节数 = 汉字数" +
+   (mis.length ? `（第${mis[0].chapter}章 ${han(mis[0].text)}字 vs ${(mis[0].pinyin.match(PY)||[]).length}音节）` : ""));
+
+const shortCh = CH.filter((c) => han(c.text) <= 80).length;
+console.log("   ≤80字 %d 章（组件上全文）/ >80字 %d 章（退摘句）", shortCh, 81 - shortCh);
+ok(shortCh > 40, "多数章节短到能在组件上完整显示");
+
+// ── 渲染：短章上全文，长章退摘句 ──
 const DD_THEME = { accent: "#a9c4a0", seal: "#c0563f" };
+const mkView = (c) => {
+  const isShort = han(c.text) <= 80;
+  return {
+    icon: "☷", title: "道德经 · 第" + c.chapter + "章",
+    lockTitle: "道德经 · 第" + c.chapter + "章",
+    primary: isShort ? c.text : c.key,
+    primaryFont: isShort ? 12 : 15, primaryLines: isShort ? 5 : 2,
+    primaryFontSmall: isShort ? 9.5 : 12.5, primaryLinesSmall: isShort ? 7 : 3,
+    detail: c.explain, tag: c.title, tagLabel: "第" + c.chapter + "章", tagAccent: false,
+    lockBottom: isShort ? null : c.explain,
+  };
+};
+
+const shortest = CH.reduce((a, b) => (han(b.text) < han(a.text) ? b : a)); // 第40章 21字
+const longest = CH.reduce((a, b) => (han(b.text) > han(a.text) ? b : a));  // 第39章 134字
+console.log("   短章样本：第%d章 %d字 / 长章样本：第%d章 %d字",
+  shortest.chapter, han(shortest.text), longest.chapter, han(longest.text));
+
+drawn = [];
+Core.render(new ListWidget(), mkView(shortest), DD_THEME, "medium");
+ok(drawn.indexOf(shortest.text) >= 0, `短章（第${shortest.chapter}章）在组件上显示整章原文`);
+ok(drawn.indexOf(shortest.explain) >= 0, "短章同时显示白话解释");
+
+drawn = [];
+Core.render(new ListWidget(), mkView(longest), DD_THEME, "medium");
+ok(drawn.indexOf(longest.key) >= 0 && drawn.indexOf(longest.text) < 0,
+   `长章（第${longest.chapter}章 ${han(longest.text)}字）自动退回摘句，不塞全文`);
 
 ["accessoryRectangular", "small", "medium"].forEach((family) => {
   drawn = [];
-  Core.render(new ListWidget(), ddView, DD_THEME, family);
-  const hasText = drawn.some((x) => x.indexOf(v.text) >= 0);
-  const hasPinyin = drawn.indexOf(v.pinyin) >= 0;
-  ok(hasText && hasPinyin, family + "：原文与拼音都在");
+  Core.render(new ListWidget(), mkView(shortest), DD_THEME, family);
+  ok(drawn.length > 0 && drawn.every((x) => x !== "○" && x !== "✓"),
+     family + "：正常渲染且不会冒出任务勾选框");
 });
 
-drawn = [];
-Core.render(new ListWidget(), ddView, DD_THEME, "medium");
-ok(drawn.indexOf(v.explain) >= 0, "medium：白话解释仍然显示");
-ok(drawn.indexOf("出处  ") >= 0, "medium：章节标签仍然显示");
-ok(drawn.every((x) => x !== "○" && x !== "✓"), "没有 tasks 时不会冒出勾选框");
+// 轮转：81 章 81 天走完一轮，一章不漏
+const seen81 = new Set();
+for (let i = 0; i < 81; i++) seen81.add(Core.absoluteDay(new Date(2026, 8, 1 + i)) % 81);
+ok(seen81.size === 81, "81 天内 81 章全部轮到");
 
 console.log(process.exitCode ? "\n❌ 有用例失败" : "\n✅ 全部通过");
 })();

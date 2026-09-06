@@ -10,14 +10,15 @@
 ├─ WidgetCore.js          公共模块：取数 + 缓存 + 每日轮转 + 按日种子随机 + 三种尺寸布局
 ├─ TaskStore.js           今日任务的读取与生成（对接提醒事项 / 日历）
 ├─ TaskGen.js             ★ 每日生成器，由快捷指令每天早上触发一次
-├─ DailyRestart.js        ★ 组件本体：名言 + 今日任务（只读，绝不写入）
-├─ DaoDeJing.js           另一个主题：道德经每日一句
+├─ DailyRestart.js        ★ 组件一：名言 + 今日任务（只读，绝不写入）
+├─ DaoDeJing.js           ★ 组件二：道德经每日一章，点开看整章
 ├─ _selftest.js           本地自检（node 跑，不用放进 Scriptable）
-└─ data/
-   ├─ daily-restart.json  名言 30 条 + 最小目标 25 条
-   ├─ daodejing.json      经句 36 条
-   ├─ tasks-earth.json    地球Online 任务库 46 条
-   └─ tasks-evil.json     恶女Online 任务库 40 条
+├─ data/
+│  ├─ daily-restart.json  名言 405 条 + 最小目标 25 条
+│  ├─ daodejing.json      道德经全本 81 章（原文 / 拼音 / 白话 / 摘句）
+│  ├─ tasks-earth.json    地球Online 任务库 46 条
+│  └─ tasks-evil.json     恶女Online 任务库 40 条
+└─ tools/daodejing/       道德经数据的构建脚本与底本（见该目录的 README）
 ```
 
 ## 它是怎么运转的
@@ -55,7 +56,9 @@
 https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/daily-restart.json
 ```
 
-把 `DailyRestart.js` 的 `DATA_URL`、`DaoDeJing.js` 的 `DATA_URL`、`TaskGen.js` 的 `REPO` 都改成你自己的。
+三处地址已填好（`DailyRestart.js` 与 `DaoDeJing.js` 的 `DATA_URL`、`TaskGen.js` 的 `REPO`）。
+
+> **仓库必须是 public**——私有仓库的 raw 链接不带 token 会 404，整套「改 JSON 就更新」会失效。
 
 > 国内网络不稳可换 jsDelivr：`https://cdn.jsdelivr.net/gh/dyuans/WidgetDyuan@main/data/xxx.json`。代价是 CDN 缓存更久，改完生效更慢。
 
@@ -86,6 +89,30 @@ https://raw.githubusercontent.com/dyuans/WidgetDyuan/main/data/daily-restart.jso
 **Interaction 选 Run Script**（这样点一下能强制刷新）。锁屏组件选「矩形」那一档。
 
 ---
+
+## 道德经组件
+
+全本 81 章，每天一章，81 天一轮。数据结构是一章一条：
+
+```jsonc
+{
+  "chapter": 8,
+  "title": "若水",              // 传统章题
+  "text": "上善若水。水善利万物而不争……",   // 整章原文
+  "pinyin": "shàng shàn ruò shuǐ。 shuǐ shàn lì……",  // 全章注音
+  "explain": "最高的善像水：滋养万物却不与之争……",   // 白话（自撰）
+  "key": "上善若水"             // 摘句，组件放不下全文时显示
+}
+```
+
+**组件上按长短自动切**：全书平均每章 65 字，62 章在 80 字以内会直接显示整章原文；
+第 20、31、38、39、64 这几章上百字，放不下就退回摘句 + 一句白话。阈值在
+`DaoDeJing.js` 顶部的 `FULL_TEXT_LIMIT`。
+
+**点一下看全章**：组件设置里 Interaction 选 **Run Script**，点击会弹出一个阅读页，
+整章原文 + 逐字拼音 + 白话解释都在那里——拼音不上组件，是因为一整章的注音怎么排都塞不下。
+
+改文字或注音走 `tools/daodejing/`，不要直接编辑 `data/daodejing.json`（会被重新生成覆盖）。
 
 ## 关于「完成后会不会消失」
 
@@ -140,12 +167,18 @@ Scriptable 的 API 也证明了这一点——`Reminder.completedDueToday()` 这
 
 想只用一种风格，改 `TaskGen.js` 顶部的 `FLAVORS`，把不要的那行删掉。
 
-## 抽取逻辑
+## 轮转与抽取
 
-用「今年第几天」当种子跑伪随机（mulberry32），所以：
+两套机制，都以**不跨年归零的绝对天数**为准（`Core.absoluteDay()`）：
+
+**名言、道德经——顺序轮转**（`pickOfDay`）。每天前进一条，走完整个列表再从头。
+用绝对天数而不是「今年第几天」，是因为 dayOfYear 最大 365：条目一旦超过 365
+（名言正好 405 条），多出来的永远轮不到，而且每年同一天必定重复同一条。
+
+**任务——按日种子随机**（`pickRandomOfDay`，mulberry32）：
 
 - **当天多次调用结果完全一致**——一天被唤醒几十次也不会变成老虎机
-- **跨天才变**，且不是顺序轮转，有真正的抽卡感
+- **跨天才变**，不是顺序轮转，有抽卡感
 - 最近用过的 40 条会被避开，短期内不重复
 - 增删任务不会导致整个序列错位
 
@@ -172,6 +205,8 @@ Scriptable 的 API 也证明了这一点——`Reminder.completedDueToday()` 这
 | `primary` | 主文案（名言 / 原文） | 全部尺寸 |
 | `secondary` | 次行小字（出处 / 拼音） | Small、Medium |
 | `detail` | 长说明 | 仅 Medium |
+| `primaryFont` / `primaryLines` | 正文字号与行数（整章原文要多行时用） | Medium |
+| `primaryFontSmall` / `primaryLinesSmall` | 同上，Small 尺寸 | Small |
 | `tasks` | `[{title, done, kind}]`，**传了就渲染成勾选清单** | 全部尺寸 |
 | `tag` / `tagLabel` | 底部胶囊标签（没有 tasks 时才显示） | Small、Medium |
 | `lockBottom` / `lockBottomAccent` | 锁屏底行 | 锁屏 |

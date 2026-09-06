@@ -1,221 +1,653 @@
 {
-  "_comment": "道德经每日一句的内容源。原文依通行王弼本，拼音与白话解释为配读。直接增删 verses 条目即可。",
-  "verses": [
+  "_comment": "《道德经》全本 81 章，一章一条。text=原文（用户提供的通行本底本，未作校改），pinyin=按 pypinyin 生成并叠加古读修正表，explain=白话解释（自撰，非抄录他处译文），key=该章摘句，组件放不下全文时显示。title 为传统章题。",
+  "chapters": [
     {
-      "text": "道可道，非常道；名可名，非常名。",
-      "pinyin": "dào kě dào, fēi cháng dào; míng kě míng, fēi cháng míng.",
-      "chapter": "第一章",
-      "explain": "能用言语说尽的道，就不是那永恒之道；能被命名的名，也不是那永恒之名。真正的「道」，超越语言。"
+      "chapter": 1,
+      "title": "体道",
+      "text": "道可道，非常道。名可名，非常名。无名天地之始，有名万物之母。故常无欲，以观其妙；常有欲，以观其徼。此两者同出而异名，同谓之玄，玄之又玄，众妙之门。",
+      "pinyin": "dào kě dào， fēi cháng dào。 míng kě míng， fēi cháng míng。 wú míng tiān dì zhī shǐ， yǒu míng wàn wù zhī mǔ。 gù cháng wú yù， yǐ guān qí miào； cháng yǒu yù， yǐ guān qí jiào。 cǐ liǎng zhě tóng chū ér yì míng， tóng wèi zhī xuán， xuán zhī yòu xuán， zhòng miào zhī mén。",
+      "explain": "能说尽的道就不是恒常之道，能命名的名也不是恒常之名。有与无同出一源，只是名称不同，都通向那个说不清的根本。",
+      "key": "玄之又玄，众妙之门"
     },
     {
-      "text": "上善若水。水善利万物而不争。",
-      "pinyin": "shàng shàn ruò shuǐ. shuǐ shàn lì wàn wù ér bù zhēng.",
-      "chapter": "第八章",
-      "explain": "最高的善像水。水滋养万物却不与之相争，甘居众人厌恶的低处，所以最接近于道。"
+      "chapter": 2,
+      "title": "养身",
+      "text": "天下皆知美之为美，斯恶已。皆知善之为善，斯不善已。故有无相生，难易相成，长短相较，高下相倾，音声相和，前后相随。是以圣人处无为之事，行不言之教；万物作焉而不辞，生而不有，为而不恃，功成而弗居。夫唯弗居，是以不去。",
+      "pinyin": "tiān xià jiē zhī měi zhī wèi měi， sī è yǐ。 jiē zhī shàn zhī wèi shàn， sī bù shàn yǐ。 gù yǒu wú xiāng shēng， nán yì xiāng chéng， cháng duǎn xiāng jiào， gāo xià xiāng qīng， yīn shēng xiāng hé， qián hòu xiāng suí。 shì yǐ shèng rén chǔ wú wéi zhī shì， xíng bù yán zhī jiào； wàn wù zuò yān ér bù cí， shēng ér bù yǒu， wéi ér bù shì， gōng chéng ér fú jū。 fú wéi fú jū， shì yǐ bù qù。",
+      "explain": "美丑善恶都是相对而生的，有无、难易、长短也一样。所以圣人做事不占有、不自恃、不居功——正因为不居功，功劳才不会离开他。",
+      "key": "生而不有，为而不恃"
     },
     {
-      "text": "致虚极，守静笃。",
-      "pinyin": "zhì xū jí, shǒu jìng dǔ.",
-      "chapter": "第十六章",
-      "explain": "让心达到极度的空明，坚守内在的宁静。唯有虚而静，才能看清万物的本来面目。"
+      "chapter": 3,
+      "title": "安民",
+      "text": "不尚贤，使民不争；不贵难得之货，使民不为盗；不见可欲，使民心不乱。是以圣人之治，虚其心，实其腹，弱其志，强其骨。常使民无知无欲。使夫智者不敢为也。为无为，则无不治。",
+      "pinyin": "bù shàng xián， shǐ mín bù zhēng； bù guì nán dé zhī huò， shǐ mín bù wèi dào； bú jiàn kě yù， shǐ mín xīn bù luàn。 shì yǐ shèng rén zhī zhì， xū qí xīn， shí qí fù， ruò qí zhì， qiáng qí gǔ。 cháng shǐ mín wú zhī wú yù。 shǐ fū zhì zhě bù gǎn wèi yě。 wèi wú wéi， zé wú bù zhì。",
+      "explain": "不标榜贤能，人就不争；不炫耀珍宝，人就不偷；不显露可欲的东西，人心就不乱。治理的要点是让人吃饱、骨骼强健，而不是激起欲望和算计。",
+      "key": "为无为，则无不治"
     },
     {
-      "text": "太上，不知有之。",
-      "pinyin": "tài shàng, bù zhī yǒu zhī.",
-      "chapter": "第十七章",
-      "explain": "最好的治理者，百姓几乎感觉不到他的存在。最高明的领导，是不着痕迹的。"
+      "chapter": 4,
+      "title": "无源",
+      "text": "道冲而用之或不盈，渊兮似万物之宗；挫其锐，解其纷，和其光，同其尘，湛兮似或存。吾不知谁之子，象帝之先。",
+      "pinyin": "dào chōng ér yòng zhī huò bù yíng， yuān xī shì wàn wù zhī zōng； cuò qí ruì， jiě qí fēn， hé qí guāng， tóng qí chén， zhàn xī shì huò cún。 wú bù zhī shuí zhī zi， xiàng dì zhī xiān。",
+      "explain": "道像个空虚的容器，怎么用都不满。它磨去锋芒、化解纷扰、收敛光芒、混同尘世。我不知道它从哪来，只知道它在天帝之先就已存在。",
+      "key": "挫其锐，解其纷，和其光，同其尘"
     },
     {
-      "text": "见素抱朴，少私寡欲。",
-      "pinyin": "jiàn sù bào pǔ, shǎo sī guǎ yù.",
-      "chapter": "第十九章",
-      "explain": "保持本色，守住质朴，减少私心，降低欲望。回归简单，内心反而更安定。"
+      "chapter": 5,
+      "title": "虚用",
+      "text": "天地不仁，以万物为刍狗；圣人不仁，以百姓为刍狗。天地之间，其犹橐龠乎？虚而不屈，动而愈出。多言数穷，不如守中。",
+      "pinyin": "tiān dì bù rén， yǐ wàn wù wèi chú gǒu； shèng rén bù rén， yǐ bǎi xìng wèi chú gǒu。 tiān dì zhī jiān， qí yóu tuó yuè hū？ xū ér bù qū， dòng ér yù chū。 duō yán shuò qióng， bù rú shǒu zhōng。",
+      "explain": "天地不偏爱谁，把万物当草扎的狗一样平等对待。天地之间像个风箱，虚空却不枯竭，越鼓动越有风。话说多了反而窘迫，不如守住那份中虚。",
+      "key": "多言数穷，不如守中"
     },
     {
-      "text": "曲则全，枉则直。",
-      "pinyin": "qū zé quán, wǎng zé zhí.",
-      "chapter": "第二十二章",
-      "explain": "懂得委曲反而能保全，懂得弯曲反而能伸直。会退让、会变通的人，往往走得更远。"
+      "chapter": 6,
+      "title": "成象",
+      "text": "谷神不死，是谓玄牝。玄牝之门，是谓天地根。绵绵若存，用之不勤。",
+      "pinyin": "gǔ shén bù sǐ， shì wèi xuán pìn。 xuán pìn zhī mén， shì wèi tiān dì gēn。 mián mián ruò cún， yòng zhī bù qín。",
+      "explain": "生养万物的力量不会消亡，它是幽深的母性之门，是天地的根。若有若无地绵延着，怎么用都用不尽。",
+      "key": "绵绵若存，用之不勤"
     },
     {
-      "text": "夫唯不争，故天下莫能与之争。",
-      "pinyin": "fú wéi bù zhēng, gù tiān xià mò néng yǔ zhī zhēng.",
-      "chapter": "第二十二章",
-      "explain": "正因为不与人争，所以天下没有谁能争得过他。不争，是一种更高明的「赢」。"
+      "chapter": 7,
+      "title": "韬光",
+      "text": "天长地久。天地所以能长且久者，以其不自生，故能长生。是以圣人后其身而身先；外其身而身存。非以其无私邪，故能成其私。",
+      "pinyin": "tiān cháng dì jiǔ。 tiān dì suǒ yǐ néng zhǎng qiě jiǔ zhě， yǐ qí bù zì shēng， gù néng cháng shēng。 shì yǐ shèng rén hòu qí shēn ér shēn xiān； wài qí shēn ér shēn cún。 fēi yǐ qí wú sī yé， gù néng chéng qí sī。",
+      "explain": "天地长久，是因为它们不为自己而生。圣人把自己放在后面反而占先，把自己置身度外反而保全。不正因为无私，才成全了自己吗。",
+      "key": "外其身而身存"
     },
     {
-      "text": "企者不立，跨者不行。",
-      "pinyin": "qǐ zhě bù lì, kuà zhě bù xíng.",
-      "chapter": "第二十四章",
-      "explain": "踮脚想站得更高，反而站不稳；迈大步想走得更快，反而走不远。急于求成，难以持久。"
+      "chapter": 8,
+      "title": "若水",
+      "text": "上善若水。水善利万物而不争，处众人之所恶，故几于道。居善地，心善渊，与善仁，言善信，正善治，事善能，动善时。夫唯不争，故无尤。",
+      "pinyin": "shàng shàn ruò shuǐ。 shuǐ shàn lì wàn wù ér bù zhēng， chǔ zhòng rén zhī suǒ wù， gù jī yú dào。 jū shàn dì， xīn shàn yuān， yǔ shàn rén， yán shàn xìn， zhèng shàn zhì， shì shàn néng， dòng shàn shí。 fú wéi bù zhēng， gù wú yóu。",
+      "explain": "最高的善像水：滋养万物却不与之争，甘居众人厌恶的低处，所以最接近道。居处、存心、待人、说话、行政、做事、行动都各得其宜。唯其不争，所以没有怨咎。",
+      "key": "上善若水"
     },
     {
-      "text": "人法地，地法天，天法道，道法自然。",
-      "pinyin": "rén fǎ dì, dì fǎ tiān, tiān fǎ dào, dào fǎ zì rán.",
-      "chapter": "第二十五章",
-      "explain": "人效法地，地效法天，天效法道，而道效法它本来的样子。顺其自然，是最高的法则。"
+      "chapter": 9,
+      "title": "运夷",
+      "text": "持而盈之，不如其已；揣而棁之，不可长保。金玉满堂，莫之能守；富贵而骄，自遗其咎。功成身退，天之道也。",
+      "pinyin": "chí ér yíng zhī， bù rú qí yǐ； chuāi ér zhuō zhī， bù kě cháng bǎo。 jīn yù mǎn táng， mò zhī néng shǒu； fù guì ér jiāo， zì yí qí jiù。 gōng chéng shēn tuì， tiān zhī dào yě。",
+      "explain": "端得太满不如及早停手，磨得太利就保不长久。金玉满堂守不住，富贵而骄是自找祸患。事情做成了就抽身，这才合乎天道。",
+      "key": "功成身退，天之道也"
     },
     {
-      "text": "重为轻根，静为躁君。",
-      "pinyin": "zhòng wéi qīng gēn, jìng wéi zào jūn.",
-      "chapter": "第二十六章",
-      "explain": "稳重是轻率的根基，宁静是浮躁的主宰。心越定，越不容易被外界扰乱。"
+      "chapter": 10,
+      "title": "能为",
+      "text": "载营魄抱一，能无离乎？专气致柔，能婴儿乎？涤除玄览，能无疵乎？爱国治民，能无知乎？天门开阖，能为雌乎？明白四达，能无为乎？生之，畜之。生而不有，为而不恃，长而不宰，是谓玄德。",
+      "pinyin": "zài yíng pò bào yī， néng wú lí hū？ zhuān qì zhì róu， néng yīng ér hū？ dí chú xuán lǎn， néng wú cī hū？ ài guó zhì mín， néng wú zhī hū？ tiān mén kāi hé， néng wèi cí hū？ míng bái sì dá， néng wú wéi hū？ shēng zhī， chù zhī。 shēng ér bù yǒu， wéi ér bù shì， zhǎng ér bù zǎi， shì wèi xuán dé。",
+      "explain": "形神合一能不分离吗？聚气至柔能像婴儿吗？洗净杂念能没有瑕疵吗？生养万物却不占有、不自恃、不主宰——这叫玄德。",
+      "key": "生而不有，为而不恃，长而不宰"
     },
     {
-      "text": "善行无辙迹。",
-      "pinyin": "shàn xíng wú zhé jì.",
-      "chapter": "第二十七章",
-      "explain": "真正善于行走的人，不留下车辙痕迹。做得好的事，往往不事张扬、不着痕迹。"
+      "chapter": 11,
+      "title": "无用",
+      "text": "三十辐，共一毂，当其无，有车之用。埏埴以为器，当其无，有器之用。凿户牖以为室，当其无，有室之用。故有之以为利，无之以为用。",
+      "pinyin": "sān shí fú， gòng yī gǔ， dāng qí wú， yǒu chē zhī yòng。 shān zhí yǐ wéi qì， dāng qí wú， yǒu qì zhī yòng。 záo hù yǒu yǐ wéi shì， dāng qí wú， yǒu shì zhī yòng。 gù yǒu zhī yǐ wéi lì， wú zhī yǐ wéi yòng。",
+      "explain": "三十根辐条聚在车毂上，正因为中间是空的，车才能用；捏陶土做器皿、开门窗盖房子，都是因为中间空着才有用。实体带来便利，空无才是真正起作用的地方。",
+      "key": "有之以为利，无之以为用"
     },
     {
-      "text": "知人者智，自知者明。",
-      "pinyin": "zhī rén zhě zhì, zì zhī zhě míng.",
-      "chapter": "第三十三章",
-      "explain": "能了解别人是有智慧，能认清自己才是真正通透。看清自己，比看懂别人更难。"
+      "chapter": 12,
+      "title": "检欲",
+      "text": "五色令人目盲，五音令人耳聋，五味令人口爽，驰骋畋猎令人心发狂，难得之货令人行妨。是以圣人为腹不为目，故去彼取此。",
+      "pinyin": "wǔ sè lìng rén mù máng， wǔ yīn lìng rén ěr lóng， wǔ wèi lìng rén kǒu shuǎng， chí chěng tián liè lìng rén xīn fā kuáng， nán dé zhī huò lìng rén xíng fáng。 shì yǐ shèng rén wéi fù bù wèi mù， gù qù bǐ qǔ cǐ。",
+      "explain": "缤纷的色彩使人目盲，繁杂的声音使人耳聋，浓烈的味道使人口伤，纵情打猎使人心发狂，稀有的货物使人行为不端。所以圣人只求填饱肚子，不追逐眼前的花哨。",
+      "key": "圣人为腹不为目"
     },
     {
-      "text": "胜人者有力，自胜者强。",
-      "pinyin": "shèng rén zhě yǒu lì, zì shèng zhě qiáng.",
-      "chapter": "第三十三章",
-      "explain": "能战胜别人只算有力量，能战胜自己的欲望与惰性，才是真正的强大。"
+      "chapter": 13,
+      "title": "厌耻",
+      "text": "宠辱若惊，贵大患若身。何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？故贵以身为天下，若可寄天下；爱以身为天下，若可托天下。",
+      "pinyin": "chǒng rǔ ruò jīng， guì dà huàn ruò shēn。 hé wèi chǒng rǔ ruò jīng？ chǒng wèi xià， dé zhī ruò jīng， shī zhī ruò jīng， shì wèi chǒng rǔ ruò jīng。 hé wèi guì dà huàn ruò shēn？ wú suǒ yǐ yǒu dà huàn zhě， wèi wú yǒu shēn， jí wú wú shēn， wú yǒu hé huàn？ gù guì yǐ shēn wèi tiān xià， ruò kě jì tiān xià； ài yǐ shēn wèi tiān xià， ruò kě tuō tiān xià。",
+      "explain": "得宠受辱都叫人心惊，因为把大祸患看得跟自身一样重。人之所以有大患，正因为有这个身体。能像珍重自身一样珍重天下的人，才可以把天下托付给他。",
+      "key": "贵以身为天下，若可寄天下"
     },
     {
-      "text": "知足者富。",
-      "pinyin": "zhī zú zhě fù.",
-      "chapter": "第三十三章",
-      "explain": "懂得满足的人才是真正的富有。富足不在于拥有多少，而在于内心是否知足。"
+      "chapter": 14,
+      "title": "赞玄",
+      "text": "视之不见名曰夷，听之不闻名曰希，搏之不得名曰微。此三者，不可致诘，故混而为一。其上不皦，其下不昧。绳绳不可名，复归于无物。是谓无状之状，无物之象，是谓惚恍。迎之不见其首，随之不见其后。执古之道，以御今之有。能知古始，是谓道纪。",
+      "pinyin": "shì zhī bú jiàn míng yuē yí， tīng zhī bù wén míng yuē xī， bó zhī bù dé míng yuē wēi。 cǐ sān zhě， bù kě zhì jí， gù hùn ér wèi yī。 qí shàng bù jiǎo， qí xià bù mèi。 mǐn mǐn bù kě míng， fù guī yú wú wù。 shì wèi wú zhuàng zhī zhuàng， wú wù zhī xiàng， shì wèi hū huǎng。 yíng zhī bú jiàn qí shǒu， suí zhī bú jiàn qí hòu。 zhí gǔ zhī dào， yǐ yù jīn zhī yǒu。 néng zhī gǔ shǐ， shì wèi dào jì。",
+      "explain": "看不见叫夷，听不到叫希，摸不着叫微，三者混而为一。它上面不明亮，下面不昏暗，绵延不绝无法命名。迎着它看不见头，跟着它看不见尾。把握上古之道，就能驾驭当下。",
+      "key": "执古之道，以御今之有"
     },
     {
-      "text": "柔弱胜刚强。",
-      "pinyin": "róu ruò shèng gāng qiáng.",
-      "chapter": "第三十六章",
-      "explain": "柔弱反而能胜过刚强。水至柔，却能穿石；以柔克刚，是一种深远的智慧。"
+      "chapter": 15,
+      "title": "显德",
+      "text": "古之善为士者，微妙玄通，深不可识。夫唯不可识，故强为之容：豫兮若冬涉川，犹兮若畏四邻，俨兮其若客，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，浑兮其若浊。孰能浊以静之徐清？孰能安以久动之徐生？保此道者不欲盈，夫唯不盈，故能蔽不新成。",
+      "pinyin": "gǔ zhī shàn wèi shì zhě， wēi miào xuán tōng， shēn bù kě shí。 fú wéi bù kě shí， gù qiǎng wéi zhī róng： yù xī ruò dōng shè chuān， yóu xī ruò wèi sì lín， yǎn xī qí ruò kè， huàn xī ruò bīng zhī jiāng shì， dūn xī qí ruò pǔ， kuàng xī qí ruò gǔ， hún xī qí ruò zhuó。 shú néng zhuó yǐ jìng zhī xú qīng？ shú néng ān yǐ jiǔ dòng zhī xú shēng？ bǎo cǐ dào zhě bù yù yíng， fú wéi bù yíng， gù néng bì bù xīn chéng。",
+      "explain": "古时得道的人幽微通达，深不可识，只能勉强形容：谨慎得像冬天过河，戒备得像提防四邻，融和得像冰要化开，敦厚得像未雕的木头。谁能让浑水静下来慢慢变清？",
+      "key": "孰能浊以静之徐清"
     },
     {
-      "text": "道常无为而无不为。",
-      "pinyin": "dào cháng wú wéi ér wú bù wéi.",
-      "chapter": "第三十七章",
-      "explain": "道总是顺任自然、不刻意妄为，却又没有什么事是它做不成的。不强求，反而水到渠成。"
+      "chapter": 16,
+      "title": "归根",
+      "text": "致虚极，守静笃。万物并作，吾以观复。夫物芸芸，各复归其根。归根曰静，是曰复命。复命曰常，知常曰明。不知常，妄作凶。知常容，容乃公，公乃王，王乃天，天乃道，道乃久，没身不殆。",
+      "pinyin": "zhì xū jí， shǒu jìng dǔ。 wàn wù bìng zuò， wú yǐ guān fù。 fú wù yún yún， gè fù guī qí gēn。 guī gēn yuē jìng， shì yuē fù mìng。 fù mìng yuē cháng， zhī cháng yuē míng。 bù zhī cháng， wàng zuò xiōng。 zhī cháng róng， róng nǎi gōng， gōng nǎi wáng， wáng nǎi tiān， tiān nǎi dào， dào nǎi jiǔ， méi shēn bù dài。",
+      "explain": "让心空到极点，守静守到笃实。万物纷纷生长，我看着它们各自回归本根。归根叫静，静叫复命，复命叫常，懂得常道叫明。不懂常道而妄动，就要出事。",
+      "key": "致虚极，守静笃"
     },
     {
-      "text": "反者道之动，弱者道之用。",
-      "pinyin": "fǎn zhě dào zhī dòng, ruò zhě dào zhī yòng.",
-      "chapter": "第四十章",
-      "explain": "向相反方向转化，是道的运动规律；守持柔弱，是道的作用方式。物极必反，柔弱长存。"
+      "chapter": 17,
+      "title": "淳风",
+      "text": "大上，下知有之，其次亲而誉之，其次侮之。信不足焉，有不信焉。悠兮其贵言，功成事遂，百姓皆谓我自然。",
+      "pinyin": "dà shàng， xià zhī yǒu zhī， qí cì qīn ér yù zhī， qí cì wǔ zhī。 xìn bù zú yān， yǒu bù xìn yān。 yōu xī qí guì yán， gōng chéng shì suì， bǎi xìng jiē wèi wǒ zì rán。",
+      "explain": "最好的统治者，百姓只知道有他存在；次一等的，百姓亲近赞美他；再次的畏惧他，最次的轻侮他。他悠然少言，事情办成了，百姓都说「本来就该这样」。",
+      "key": "功成事遂，百姓皆谓我自然"
     },
     {
-      "text": "大器晚成，大音希声，大象无形。",
-      "pinyin": "dà qì wǎn chéng, dà yīn xī shēng, dà xiàng wú xíng.",
-      "chapter": "第四十一章",
-      "explain": "最贵重的器物往往最后成就，最大的声音听似无声，最大的形象反而没有定形。真正的大成，常常不张扬。"
+      "chapter": 18,
+      "title": "俗薄",
+      "text": "大道废，有仁义；智慧出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。",
+      "pinyin": "dà dào fèi， yǒu rén yì； zhì huì chū， yǒu dà wěi； liù qīn bù hé， yǒu xiào cí； guó jiā hūn luàn， yǒu zhōng chén。",
+      "explain": "大道被废弃了，才有人提倡仁义；智巧出现了，才有了大伪；家庭不和睦，才显出孝慈；国家昏乱，才辨得出忠臣。",
+      "key": "大道废，有仁义"
     },
     {
-      "text": "知足不辱，知止不殆。",
-      "pinyin": "zhī zú bù rǔ, zhī zhǐ bù dài.",
-      "chapter": "第四十四章",
-      "explain": "懂得满足就不会受辱，懂得适可而止就不会陷入危险。欲望，要有边界。"
+      "chapter": 19,
+      "title": "还淳",
+      "text": "绝圣弃智，民利百倍；绝仁弃义，民复孝慈；绝巧弃利，盗贼无有。此三者以为文不足，故令有所属：见素抱朴，少私寡欲。",
+      "pinyin": "jué shèng qì zhì， mín lì bǎi bèi； jué rén qì yì， mín fù xiào cí； jué qiǎo qì lì， dào zéi wú yǒu。 cǐ sān zhě yǐ wéi wén bù zú， gù lìng yǒu suǒ shǔ： xiàn sù bào pǔ， shǎo sī guǎ yù。",
+      "explain": "抛开圣智，百姓得利百倍；抛开仁义，百姓自会孝慈；抛开机巧私利，盗贼自然绝迹。这三条当作条文还不够，要落到实处：保持本色，守住质朴，减少私心，降低欲望。",
+      "key": "见素抱朴，少私寡欲"
     },
     {
-      "text": "大成若缺，其用不弊。",
-      "pinyin": "dà chéng ruò quē, qí yòng bù bì.",
-      "chapter": "第四十五章",
-      "explain": "最完美的东西，看上去好像有缺憾，但它的作用永不衰竭。留有余地，反而长久。"
+      "chapter": 20,
+      "title": "异俗",
+      "text": "绝学无忧，唯之与阿，相去几何？善之与恶，相去若何？人之所畏，不可不畏。荒兮其未央哉！众人熙熙，如享太牢，如春登台。我独泊兮其未兆，如婴儿之未孩；儽儽兮，若无所归。众人皆有余，而我独若遗。我愚人之心也哉！沌沌兮，俗人昭昭，我独若昏。俗人察察，我独闷闷。澹兮其若海，飂兮若无止。众人皆有以，而我独顽似鄙。我独异于人，而贵食母。",
+      "pinyin": "jué xué wú yōu， wéi zhī yǔ ē， xiāng qù jǐ hé？ shàn zhī yǔ è， xiàng qù ruò hé？ rén zhī suǒ wèi， bù kě bù wèi。 huāng xī qí wèi yāng zāi！ zhòng rén xī xī， rú xiǎng tài láo， rú chūn dēng tái。 wǒ dú pō xī qí wèi zhào， rú yīng ér zhī wèi hái； lěi lěi xī， ruò wú suǒ guī。 zhòng rén jiē yǒu yú， ér wǒ dú ruò yí。 wǒ yú rén zhī xīn yě zāi！ dùn dùn xī， sú rén zhāo zhāo， wǒ dú ruò hūn。 sú rén chá chá， wǒ dú mèn mèn。 dàn xī qí ruò hǎi， liù xī ruò wú zhǐ。 zhòng rén jiē yǒu yǐ， ér wǒ dú wán shì bǐ。 wǒ dú yì yú rén， ér guì sì mǔ。",
+      "explain": "众人熙熙攘攘像赴盛宴、像春天登台，我却淡然无动于衷，像还不会笑的婴儿。众人都有余，我独像有所遗失；世人精明，我独昏昏闷闷。我跟别人不一样，因为我看重的是那个哺育万物的根本。",
+      "key": "我独异于人，而贵食母"
     },
     {
-      "text": "祸莫大于不知足。",
-      "pinyin": "huò mò dà yú bù zhī zú.",
-      "chapter": "第四十六章",
-      "explain": "最大的祸患，莫过于不知满足。贪欲不止，灾祸难息。"
+      "chapter": 21,
+      "title": "虚心",
+      "text": "孔德之容，惟道是从。道之为物，惟恍惟惚。惚兮恍兮，其中有象；恍兮惚兮，其中有物。窈兮冥兮，其中有精；其精甚真，其中有信。自今及古，其名不去，以阅众甫。吾何以知众甫之状哉？以此。",
+      "pinyin": "kǒng dé zhī róng， wéi dào shì cóng。 dào zhī wèi wù， wéi huǎng wéi hū。 hū xī huǎng xī， qí zhōng yǒu xiàng； huǎng xī hū xī， qí zhōng yǒu wù。 yǎo xī míng xī， qí zhōng yǒu jīng； qí jīng shèn zhēn， qí zhōng yǒu xìn。 zì jīn jí gǔ， qí míng bù qù， yǐ yuè zhòng fǔ。 wú hé yǐ zhī zhòng fǔ zhī zhuàng zāi？ yǐ cǐ。",
+      "explain": "大德的样子只跟随道。道这个东西恍惚不定，可恍惚之中有形象、有实物；深远幽暗之中有精质。这精质极其真实，其中有信验可凭。",
+      "key": "其精甚真，其中有信"
     },
     {
-      "text": "知足之足，常足矣。",
-      "pinyin": "zhī zú zhī zú, cháng zú yǐ.",
-      "chapter": "第四十六章",
-      "explain": "懂得满足而带来的满足，才是长久的满足。心若知足，便永远富足。"
+      "chapter": 22,
+      "title": "益谦",
+      "text": "曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。是以圣人抱一为天下式。不自见故明，不自是故彰，不自伐故有功，不自矜故长。夫唯不争，故天下莫能与之争。古之所谓曲则全者，岂虚言哉！诚全而归之。",
+      "pinyin": "qū zé quán， wǎng zé zhí， wā zé yíng， bì zé xīn， shǎo zé dé， duō zé huò。 shì yǐ shèng rén bào yī wèi tiān xià shì。 bù zì xiàn gù míng， bù zì shì gù zhāng， bù zì fá gù yǒu gōng， bù zì jīn gù zhǎng。 fú wéi bù zhēng， gù tiān xià mò néng yǔ zhī zhēng。 gǔ zhī suǒ wèi qū zé quán zhě， qǐ xū yán zāi！ chéng quán ér guī zhī。",
+      "explain": "委曲反能保全，弯曲反能伸直，低洼反能盈满，破旧反能更新，少取反能多得。不自我表现所以显明，不自以为是所以彰显，不自我夸耀所以有功。正因为不争，天下没人争得过他。",
+      "key": "夫唯不争，故天下莫能与之争"
     },
     {
-      "text": "为学日益，为道日损。",
-      "pinyin": "wéi xué rì yì, wéi dào rì sǔn.",
-      "chapter": "第四十八章",
-      "explain": "求学问，知识一天天增加；求大道，反而要一天天减去成见与杂念。做减法，也是一种修行。"
+      "chapter": 23,
+      "title": "虚无",
+      "text": "希言自然。故飘风不终朝，骤雨不终日。孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者，道者同于道，德者同于德，同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉。",
+      "pinyin": "xī yán zì rán。 gù piāo fēng bù zhōng cháo， zhòu yǔ bù zhōng rì。 shú wèi cǐ zhě？ tiān dì。 tiān dì shàng bù néng jiǔ， ér kuàng yú rén hū？ gù cóng shì yú dào zhě， dào zhě tóng yú dào， dé zhě tóng yú dé， tóng yú dào zhě， dào yì lè dé zhī； tóng yú dé zhě， dé yì lè dé zhī； tóng yú shī zhě， shī yì lè dé zhī。 xìn bù zú yān， yǒu bù xìn yān。",
+      "explain": "少说话才合乎自然。狂风刮不了一早上，暴雨下不了一整天。天地都不能让激烈的事持久，何况人呢。求道的人就与道相合，求德的人就与德相合。",
+      "key": "飘风不终朝，骤雨不终日"
     },
     {
-      "text": "知者不言，言者不知。",
-      "pinyin": "zhī zhě bù yán, yán zhě bù zhī.",
-      "chapter": "第五十六章",
-      "explain": "真正懂得的人不轻易多言，夸夸其谈的人往往并不真懂。少言，是一种深度。"
+      "chapter": 24,
+      "title": "苦恩",
+      "text": "企者不立，跨者不行，自见者不明，自是者不彰，自伐者无功，自矜者不长。其在道也，曰余食赘行。物或恶之，故有道者不处。",
+      "pinyin": "qǐ zhě bù lì， kuà zhě bù xíng， zì xiàn zhě bù míng， zì shì zhě bù zhāng， zì fá zhě wú gōng， zì jīn zhě bù zhǎng。 qí zài dào yě， yuē yú shí zhuì xíng。 wù huò wù zhī， gù yǒu dào zhě bù chǔ。",
+      "explain": "踮着脚站不稳，跨大步走不远。自我表现的反而不明白，自以为是的反而不彰显，自我夸耀的反而没有功劳。这些东西在道看来，就是剩饭和赘瘤。",
+      "key": "企者不立，跨者不行"
     },
     {
-      "text": "祸兮福之所倚，福兮祸之所伏。",
-      "pinyin": "huò xī fú zhī suǒ yǐ, fú xī huò zhī suǒ fú.",
-      "chapter": "第五十八章",
-      "explain": "灾祸里依傍着福气，福气里潜藏着灾祸。好坏并非绝对、会相互转化，所以顺境别得意，逆境别绝望。"
+      "chapter": 25,
+      "title": "象元",
+      "text": "有物混成，先天地生。寂兮寥兮，独立而不改，周行而不殆，可以为天下母。吾不知其名，字之曰道，强为之名，曰大。大曰逝，逝曰远，远曰反。故道大，天大，地大，王亦大。域中有四大，而王居其一焉。人法地，地法天，天法道，道法自然。",
+      "pinyin": "yǒu wù hùn chéng， xiān tiān dì shēng。 jì xī liáo xī， dú lì ér bù gǎi， zhōu xíng ér bù dài， kě yǐ wèi tiān xià mǔ。 wú bù zhī qí míng， zì zhī yuē dào， qiǎng wéi zhī míng， yuē dà。 dà yuē shì， shì yuē yuǎn， yuǎn yuē fǎn。 gù dào dà， tiān dà， dì dà， wáng yì dà。 yù zhōng yǒu sì dà， ér wáng jū qí yī yān。 rén fǎ dì， dì fǎ tiān， tiān fǎ dào， dào fǎ zì rán。",
+      "explain": "有个东西浑然而成，先于天地存在。寂静空虚，独立不改，循环运行而不衰竭，可以算作天下的母亲。我不知它的名字，勉强叫它「道」，勉强形容为「大」。",
+      "key": "人法地，地法天，天法道，道法自然"
     },
     {
-      "text": "图难于其易，为大于其细。",
-      "pinyin": "tú nán yú qí yì, wéi dà yú qí xì.",
-      "chapter": "第六十三章",
-      "explain": "解决难题，要趁它还容易时入手；成就大事，要从它还细小时着手。化难为易，化大为小。"
+      "chapter": 26,
+      "title": "重德",
+      "text": "重为轻根，静为躁君。是以圣人终日行不离辎重。虽有荣观，燕处超然。奈何万乘之主，而以身轻天下？轻则失本，躁则失君。",
+      "pinyin": "zhòng wèi qīng gēn， jìng wèi zào jūn。 shì yǐ shèng rén zhōng rì xíng bù lí zī zhòng。 suī yǒu róng guān， yàn chǔ chāo rán。 nài hé wàn chéng zhī zhǔ， ér yǐ shēn qīng tiān xià？ qīng zé shī běn， zào zé shī jūn。",
+      "explain": "稳重是轻率的根基，宁静是浮躁的主宰。所以圣人整天赶路都不离开载重的车。即使有华美的景观，也安然处之、超脱其外。轻率就失去根本，浮躁就丧失主导。",
+      "key": "重为轻根，静为躁君"
     },
     {
-      "text": "天下难事，必作于易；天下大事，必作于细。",
-      "pinyin": "tiān xià nán shì, bì zuò yú yì; tiān xià dà shì, bì zuò yú xì.",
-      "chapter": "第六十三章",
-      "explain": "天下的难事，一定从容易处做起；天下的大事，一定从细微处开始。再大的事，也始于眼前的小步。"
+      "chapter": 27,
+      "title": "巧用",
+      "text": "善行无辙迹，善言无瑕谪；善数不用筹策；善闭无关楗而不可开，善结无绳约而不可解。是以圣人常善救人，故无弃人；常善救物，故无弃物，是谓袭明。故善人者，不善人之师；不贵其师，不爱其资，虽智大迷，是谓要妙。",
+      "pinyin": "shàn xíng wú zhé jì， shàn yán wú xiá zhé； shàn shǔ bù yòng chóu cè； shàn bì wú guān jiàn ér bù kě kāi， shàn jié wú shéng yuē ér bù kě jiě。 shì yǐ shèng rén cháng shàn jiù rén， gù wú qì rén； cháng shàn jiù wù， gù wú qì wù， shì wèi xí míng。 gù shàn rén zhě， bù shàn rén zhī shī； bù guì qí shī， bù ài qí zī， suī zhì dà mí， shì wèi yào miào。",
+      "explain": "真正善于行走的不留车辙，善于言谈的没有破绽，善于关闭的不用门闩却打不开。圣人善于救人，所以没有被遗弃的人；善于救物，所以没有被丢弃的物——这叫承袭了道的明。",
+      "key": "善行无辙迹，善言无瑕谪"
     },
     {
-      "text": "合抱之木，生于毫末。",
-      "pinyin": "hé bào zhī mù, shēng yú háo mò.",
-      "chapter": "第六十四章",
-      "explain": "需要双臂合抱的大树，是从细小的萌芽长起来的。伟大的事物都始于微小，贵在积累。"
+      "chapter": 28,
+      "title": "反朴",
+      "text": "知其雄，守其雌，为天下谿。为天下谿，常德不离，复归于婴儿。知其白，守其黑，为天下式。为天下式，常德不忒，复归于无极。知其荣，守其辱，为天下谷，常德乃足，复归于朴。朴散则为器，圣人用之，则为官长，故大制不割。",
+      "pinyin": "zhī qí xióng， shǒu qí cí， wèi tiān xià xī。 wèi tiān xià xī， cháng dé bù lí， fù guī yú yīng ér。 zhī qí bái， shǒu qí hēi， wèi tiān xià shì。 wèi tiān xià shì， cháng dé bù tè， fù guī yú wú jí。 zhī qí róng， shǒu qí rǔ， wèi tiān xià gǔ， cháng dé nǎi zú， fù guī yú pǔ。 pǔ sàn zé wèi qì， shèng rén yòng zhī， zé wèi guān zhǎng， gù dà zhì bù gē。",
+      "explain": "知道什么是雄强，却安守雌柔，甘做天下的溪谷。这样常德就不离身，回复到婴儿的状态。真朴散开就成了器物，圣人用它做官长——最好的裁制是不割裂。",
+      "key": "知其雄，守其雌，为天下谿"
     },
     {
-      "text": "千里之行，始于足下。",
-      "pinyin": "qiān lǐ zhī xíng, shǐ yú zú xià.",
-      "chapter": "第六十四章",
-      "explain": "千里的远行，从脚下第一步开始。再宏大的目标，也要从眼前最小的行动做起。"
+      "chapter": 29,
+      "title": "无为",
+      "text": "将欲取天下而为之，吾见其不得已。天下神器，不可为也，为者败之，执者失之。故物或行或随，或歔或吹。或强或羸，或挫或隳。是以圣人去甚，去奢，去泰。",
+      "pinyin": "jiāng yù qǔ tiān xià ér wèi zhī， wú jiàn qí bù dé yǐ。 tiān xià shén qì， bù kě wèi yě， wèi zhě bài zhī， zhí zhě shī zhī。 gù wù huò xíng huò suí， huò xū huò chuī。 huò qiáng huò léi， huò cuò huò huī。 shì yǐ shèng rén qù shèn， qù shē， qù tài。",
+      "explain": "想强行夺取天下来摆弄，我看是做不到的。天下是神圣的器物，不能强为：强为的会失败，把持的会失去。万物有前有后、有强有弱，所以圣人去掉极端、去掉奢侈、去掉过度。",
+      "key": "圣人去甚，去奢，去泰"
     },
     {
-      "text": "慎终如始，则无败事。",
-      "pinyin": "shèn zhōng rú shǐ, zé wú bài shì.",
-      "chapter": "第六十四章",
-      "explain": "做事到快结束时，仍像开始时一样谨慎，就不会失败。许多事，都败在最后的松懈上。"
+      "chapter": 30,
+      "title": "俭武",
+      "text": "以道佐人主者，不以兵强天下。其事好还。师之所处，荆棘生焉。大军之后，必有凶年。善者果而已，不以取强。果而勿矜，果而勿伐，果而勿骄。果而不得已，果而勿强。物壮则老，是谓不道，不道早已。",
+      "pinyin": "yǐ dào zuǒ rén zhǔ zhě， bù yǐ bīng qiáng tiān xià。 qí shì hǎo hái。 shī zhī suǒ chù， jīng jí shēng yān。 dà jūn zhī hòu， bì yǒu xiōng nián。 shàn zhě guǒ ér yǐ， bù yǐ qǔ qiǎng。 guǒ ér wù jīn， guǒ ér wù fá， guǒ ér wù jiāo。 guǒ ér bù dé yǐ， guǒ ér wù qiǎng。 wù zhuàng zé lǎo， shì wèi bù dào， bù dào zǎo yǐ。",
+      "explain": "用道辅佐君主的人，不靠武力逞强于天下，因为这种事必有反噬。军队所到之处荆棘丛生，大战之后必有荒年。达到目的就够了，不要借此逞强。事物强壮了就会衰老，这不合于道。",
+      "key": "物壮则老，是谓不道"
     },
     {
-      "text": "江海所以能为百谷王者，以其善下之。",
-      "pinyin": "jiāng hǎi suǒ yǐ néng wéi bǎi gǔ wáng zhě, yǐ qí shàn xià zhī.",
-      "chapter": "第六十六章",
-      "explain": "江海之所以能成为百川汇聚的王者，是因为它甘居低处。越谦下，越能容纳，越能成就。"
+      "chapter": 31,
+      "title": "偃武",
+      "text": "夫佳兵者，不祥之器，物或恶之，故有道者不处。君子居则贵左，用兵则贵右。兵者不祥之器，非君子之器，不得已而用之，恬淡为上。胜而不美，而美之者，是乐杀人。夫乐杀人者，则不可以得志于天下矣。吉事尚左，凶事尚右。偏将军居左，上将军居右，言以丧礼处之。杀人之众，以哀悲泣之，战胜，以丧礼处之。",
+      "pinyin": "fú jiā bīng zhě， bù xiáng zhī qì， wù huò wù zhī， gù yǒu dào zhě bù chǔ。 jūn zǐ jū zé guì zuǒ， yòng bīng zé guì yòu。 bīng zhě bù xiáng zhī qì， fēi jūn zǐ zhī qì， bù dé yǐ ér yòng zhī， tián dàn wèi shàng。 shèng ér bù měi， ér měi zhī zhě， shì lè shā rén。 fú lè shā rén zhě， zé bù kě yǐ dé zhì yú tiān xià yǐ。 jí shì shàng zuǒ， xiōng shì shàng yòu。 piān jiāng jūn jū zuǒ， shàng jiàng jūn jū yòu， yán yǐ sāng lǐ chǔ zhī。 shā rén zhī zhòng， yǐ āi bēi qì zhī， zhàn shèng， yǐ sāng lǐ chǔ zhī。",
+      "explain": "兵器是不祥之物，人们都厌恶它，有道的人不靠近。不得已才用，也要淡然处之。打赢了不要得意，得意就是以杀人为乐——以杀人为乐的人，不可能得志于天下。战胜了，要用丧礼的规格来对待。",
+      "key": "兵者不祥之器，非君子之器"
     },
     {
-      "text": "我有三宝，持而保之：一曰慈，二曰俭，三曰不敢为天下先。",
-      "pinyin": "wǒ yǒu sān bǎo, chí ér bǎo zhī: yī yuē cí, èr yuē jiǎn, sān yuē bù gǎn wéi tiān xià xiān.",
-      "chapter": "第六十七章",
-      "explain": "我有三件珍宝，一直持守：一是慈爱，二是俭朴，三是不争先逞强。这是老子的处世之宝。"
+      "chapter": 32,
+      "title": "圣德",
+      "text": "道常无名，朴虽小，天下莫能臣也。侯王若能守之，万物将自宾。天地相合，以降甘露，民莫之令而自均。始制有名，名亦既有，夫亦将知止，知止所以不殆。譬道之在天下，犹川谷之于江海。",
+      "pinyin": "dào cháng wú míng， pǔ suī xiǎo， tiān xià mò néng chén yě。 hóu wáng ruò néng shǒu zhī， wàn wù jiāng zì bīn。 tiān dì xiāng hé， yǐ jiàng gān lù， mín mò zhī lìng ér zì jūn。 shǐ zhì yǒu míng， míng yì jì yǒu， fú yì jiāng zhī zhǐ， zhī zhǐ suǒ yǐ bù dài。 pì dào zhī zài tiān xià， yóu chuān gǔ zhī yú jiāng hǎi。",
+      "explain": "道恒常无名，质朴虽小，天下没人能支配它。侯王若能守住它，万物自会归附。制度一旦建立就有了名分，有了名分就该知道适可而止——知止才不会陷入危险。",
+      "key": "知止所以不殆"
     },
     {
-      "text": "天网恢恢，疏而不失。",
-      "pinyin": "tiān wǎng huī huī, shū ér bù shī.",
-      "chapter": "第七十三章",
-      "explain": "天道像一张广大的网，看似稀疏，却不会漏掉什么。行事自有因果，不必心存侥幸。"
+      "chapter": 33,
+      "title": "辩德",
+      "text": "知人者智，自知者明。胜人者有力，自胜者强。知足者富。强行者有志。不失其所者久。死而不亡者寿。",
+      "pinyin": "zhī rén zhě zhì， zì zhī zhě míng。 shèng rén zhě yǒu lì， zì shèng zhě qiáng。 zhī zú zhě fù。 qiǎng xíng zhě yǒu zhì。 bù shī qí suǒ zhě jiǔ。 sǐ ér bù wáng zhě shòu。",
+      "explain": "能了解别人是聪明，能认清自己才叫通透。战胜别人算有力量，战胜自己才叫强大。知道满足的人才富有，坚持力行的人才有志向。",
+      "key": "知人者智，自知者明"
     },
     {
-      "text": "天下莫柔弱于水，而攻坚强者莫之能胜。",
-      "pinyin": "tiān xià mò róu ruò yú shuǐ, ér gōng jiān qiáng zhě mò zhī néng shèng.",
-      "chapter": "第七十八章",
-      "explain": "天下没有比水更柔弱的，但攻克坚强的东西，没有能胜过水的。至柔，藏着至刚的力量。"
+      "chapter": 34,
+      "title": "任成",
+      "text": "大道氾兮，其可左右。万物恃之而生而不辞，功成不名有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。",
+      "pinyin": "dà dào fàn xī， qí kě zuǒ yòu。 wàn wù shì zhī ér shēng ér bù cí， gōng chéng bù míng yǒu。 yī yǎng wàn wù ér bù wéi zhǔ， cháng wú yù， kě míng yú xiǎo； wàn wù guī yān ér bù wéi zhǔ， kě míng wèi dà。 yǐ qí zhōng bù zì wèi dà， gù néng chéng qí dà。",
+      "explain": "大道广泛流行，左右上下无所不到。万物依靠它生长而它不推辞，功成了也不占名。它养育万物却不做主宰，所以可称为小；万物归附它却不做主宰，所以可称为大。正因为始终不自以为大，才成就了它的大。",
+      "key": "以其终不自为大，故能成其大"
     },
     {
-      "text": "信言不美，美言不信。",
-      "pinyin": "xìn yán bù měi, měi yán bù xìn.",
-      "chapter": "第八十一章",
-      "explain": "真实可信的话往往不漂亮，漂亮动听的话往往不真实。听话要听其真，而非其华。"
+      "chapter": 35,
+      "title": "仁德",
+      "text": "执大象，天下往。往而不害，安平太。乐与饵，过客止。道之出口，淡乎其无味，视之不足见，听之不足闻，用之不可既。",
+      "pinyin": "zhí dà xiàng， tiān xià wǎng。 wǎng ér bù hài， ān píng tài。 yuè yǔ ěr， guò kè zhǐ。 dào zhī chū kǒu， dàn hū qí wú wèi， shì zhī bù zú jiàn， tīng zhī bù zú wén， yòng zhī bù kě jì。",
+      "explain": "执守大道，天下人都来归附，来了也不受伤害，安宁太平。音乐和美食能让过客停步，可道说出来却平淡无味，看也看不见，听也听不着，用起来却取之不尽。",
+      "key": "淡乎其无味，视之不足见"
     },
     {
-      "text": "圣人不积，既以为人，己愈有。",
-      "pinyin": "shèng rén bù jī, jì yǐ wèi rén, jǐ yù yǒu.",
-      "chapter": "第八十一章",
-      "explain": "有道的人不为自己囤积，越是尽力帮助别人，自己反而越充实丰盈。给予，是另一种获得。"
+      "chapter": 36,
+      "title": "微明",
+      "text": "将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲夺之，必固与之。是谓微明。柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。",
+      "pinyin": "jiāng yù xī zhī， bì gù zhāng zhī； jiāng yù ruò zhī， bì gù qiáng zhī； jiāng yù fèi zhī， bì gù xīng zhī； jiāng yù duó zhī， bì gù yǔ zhī。 shì wèi wēi míng。 róu ruò shèng gāng qiáng。 yú bù kě tuō yú yuān， guó zhī lì qì bù kě yǐ shì rén。",
+      "explain": "想要收敛它，必先扩张它；想要削弱它，必先强化它；想要废弃它，必先兴举它；想要夺取它，必先给予它。这叫看透了幽微。柔弱胜过刚强。鱼离不开深渊，国之利器不可轻易示人。",
+      "key": "柔弱胜刚强"
+    },
+    {
+      "chapter": 37,
+      "title": "为政",
+      "text": "道常无为而无不为。侯王若能守之，万物将自化。化而欲作，吾将镇之以无名之朴。无名之朴，夫亦将无欲。不欲以静，天下将自定。",
+      "pinyin": "dào cháng wú wéi ér wú bù wèi。 hóu wáng ruò néng shǒu zhī， wàn wù jiāng zì huà。 huà ér yù zuò， wú jiāng zhèn zhī yǐ wú míng zhī pǔ。 wú míng zhī pǔ， fú yì jiāng wú yù。 bù yù yǐ jìng， tiān xià jiāng zì dìng。",
+      "explain": "道总是顺任自然、不刻意妄为，却没有什么事是它做不成的。侯王若能守住它，万物自会化育。化育中若起了贪欲，就用无名的质朴来镇定它。不起贪欲而归于清静，天下自会安定。",
+      "key": "道常无为而无不为"
+    },
+    {
+      "chapter": 38,
+      "title": "论德",
+      "text": "上德不德，是以有德；下德不失德，是以无德。上德无为而无以为；下德为之而有以为。上仁为之而无以为；上义为之而有以为。上礼为之而莫之应，则攘臂而扔之。故失道而后德，失德而后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄，而乱之首。前识者，道之华，而愚之始。是以大丈夫处其厚，不居其薄；处其实，不居其华。故去彼取此。",
+      "pinyin": "shàng dé bù dé， shì yǐ yǒu dé； xià dé bù shī dé， shì yǐ wú dé。 shàng dé wú wéi ér wú yǐ wéi； xià dé wèi zhī ér yǒu yǐ wéi。 shàng rén wèi zhī ér wú yǐ wéi； shàng yì wèi zhī ér yǒu yǐ wéi。 shàng lǐ wèi zhī ér mò zhī yīng， zé rǎng bì ér rēng zhī。 gù shī dào ér hòu dé， shī dé ér hòu rén， shī rén ér hòu yì， shī yì ér hòu lǐ。 fú lǐ zhě， zhōng xìn zhī báo， ér luàn zhī shǒu。 qián shí zhě， dào zhī huá， ér yú zhī shǐ。 shì yǐ dà zhàng fu chǔ qí hòu， bù jū qí báo； chǔ qí shí， bù jū qí huá。 gù qù bǐ qǔ cǐ。",
+      "explain": "上德的人不刻意表现德，所以真有德；下德的人生怕失德，反而无德。道失了才讲德，德失了才讲仁，仁失了才讲义，义失了才讲礼。礼是忠信不足的产物，是祸乱的开端。大丈夫立身敦厚，不居于浅薄。",
+      "key": "处其厚，不居其薄"
+    },
+    {
+      "chapter": 39,
+      "title": "法本",
+      "text": "昔之得一者，天得一以清，地得一以宁，神得一以灵，谷得一以盈，万物得一以生，侯王得一以为天下贞。其致之，天无以清将恐裂，地无以宁将恐发，神无以灵将恐歇，谷无以盈将恐竭，万物无以生将恐灭，侯王无以贵高将恐蹶。故贵以贱为本，高以下为基。是以侯王自称孤、寡、不谷。此非以贱为本邪？非乎？故致数舆无舆，不欲琭琭如玉，珞珞如石。",
+      "pinyin": "xī zhī dé yī zhě， tiān dé yī yǐ qīng， dì dé yī yǐ níng， shén dé yī yǐ líng， gǔ dé yī yǐ yíng， wàn wù dé yī yǐ shēng， hóu wáng dé yī yǐ wéi tiān xià zhēn。 qí zhì zhī， tiān wú yǐ qīng jiāng kǒng liè， dì wú yǐ níng jiāng kǒng fā， shén wú yǐ líng jiāng kǒng xiē， gǔ wú yǐ yíng jiāng kǒng jié， wàn wù wú yǐ shēng jiāng kǒng miè， hóu wáng wú yǐ guì gāo jiāng kǒng jué。 gù guì yǐ jiàn wèi běn， gāo yǐ xià wèi jī。 shì yǐ hóu wáng zì chēng gū、 guǎ、 bù gǔ。 cǐ fēi yǐ jiàn wéi běn yé？ fēi hū？ gù zhì shù yú wú yú， bù yù lù lù rú yù， luò luò rú shí。",
+      "explain": "从来得到「一」的：天得一而清明，地得一而安宁，神得一而灵验，万物得一而生长。若失了这个根本，天会崩裂，地会震发，万物会灭绝。所以尊贵以卑贱为根本，高以下为基础。",
+      "key": "贵以贱为本，高以下为基"
+    },
+    {
+      "chapter": 40,
+      "title": "去用",
+      "text": "反者道之动，弱者道之用。天下万物生于有，有生于无。",
+      "pinyin": "fǎn zhě dào zhī dòng， ruò zhě dào zhī yòng。 tiān xià wàn wù shēng yú yǒu， yǒu shēng yú wú。",
+      "explain": "向相反方向转化，是道的运动规律；守持柔弱，是道的作用方式。天下万物生于「有」，而「有」生于「无」。",
+      "key": "反者道之动，弱者道之用"
+    },
+    {
+      "chapter": 41,
+      "title": "同异",
+      "text": "上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。不笑，不足以为道。故建言有之：明道若昧，进道若退，夷道若颣，上德若谷，大白若辱，广德若不足，建德若偷，质真若渝，大方无隅，大器晚成，大音希声，大象无形，道隐无名。夫唯道，善贷且成。",
+      "pinyin": "shàng shì wén dào， qín ér xíng zhī； zhōng shì wén dào， ruò cún ruò wáng； xià shì wén dào， dà xiào zhī。 bù xiào， bù zú yǐ wéi dào。 gù jiàn yán yǒu zhī： míng dào ruò mèi， jìn dào ruò tuì， yí dào ruò lèi， shàng dé ruò gǔ， dà bái ruò rǔ， guǎng dé ruò bù zú， jiàn dé ruò tōu， zhì zhēn ruò yú， dà fāng wú yú， dà qì wǎn chéng， dà yīn xī shēng， dà xiàng wú xíng， dào yǐn wú míng。 fú wéi dào， shàn dài qiě chéng。",
+      "explain": "上等人听了道就勤勉践行，中等人半信半疑，下等人大笑——不被笑就不足以成其为道。所以有这些话：光明的道好像暗昧，前进的道好像后退。最大的方正没有棱角，最大的器物最后成就，最大的声音听似无声。",
+      "key": "大器晚成，大音希声，大象无形"
+    },
+    {
+      "chapter": 42,
+      "title": "道化",
+      "text": "道生一，一生二，二生三，三生万物。万物负阴而抱阳，冲气以为和。人之所恶，唯孤、寡、不谷，而王公以为称。故物或损之而益，或益之而损。人之所教，我亦教之。强梁者不得其死，吾将以为教父。",
+      "pinyin": "dào shēng yī， yī shēng èr， èr shēng sān， sān shēng wàn wù。 wàn wù fù yīn ér bào yáng， chōng qì yǐ wéi hé。 rén zhī suǒ wù， wéi gū、 guǎ、 bù gǔ， ér wáng gōng yǐ wéi chēng。 gù wù huò sǔn zhī ér yì， huò yì zhī ér sǔn。 rén zhī suǒ jiào， wǒ yì jiào zhī。 qiáng liáng zhě bù dé qí sǐ， wú jiāng yǐ wéi jiào fù。",
+      "explain": "万物背阴而向阳，在冲和之气中达成平衡。人们厌恶的孤、寡、不谷，王公却拿来自称。所以事物有时减损反而得益，有时增益反而受损。逞强好斗的人不得好死，这话我要当作教诲的根本。",
+      "key": "道生一，一生二，二生三，三生万物"
+    },
+    {
+      "chapter": 43,
+      "title": "遍用",
+      "text": "天下之至柔，驰骋天下之至坚。无有入无闲，吾是以知无为之有益。不言之教，无为之益，天下希及之。",
+      "pinyin": "tiān xià zhī zhì róu， chí chěng tiān xià zhī zhì jiān。 wú yǒu rù wú xián， wú shì yǐ zhī wú wéi zhī yǒu yì。 bù yán zhī jiào， wú wéi zhī yì， tiān xià xī jí zhī。",
+      "explain": "天下最柔弱的东西，能穿行于最坚硬的东西之中。无形的力量能进入没有缝隙的地方，我因此明白无为的益处。不言的教化、无为的好处，天下很少有能比得上的。",
+      "key": "不言之教，无为之益，天下希及之"
+    },
+    {
+      "chapter": 44,
+      "title": "立戒",
+      "text": "名与身孰亲？身与货孰多？得与亡孰病？是故甚爱必大费，多藏必厚亡，知足不辱，知止不殆，可以长久。",
+      "pinyin": "míng yǔ shēn shú qīn？ shēn yǔ huò shú duō？ dé yǔ wáng shú bìng？ shì gù shèn ài bì dà fèi， duō cáng bì hòu wáng， zhī zú bù rǔ， zhī zhǐ bù dài， kě yǐ cháng jiǔ。",
+      "explain": "名声和生命哪个亲近？生命和财货哪个贵重？得到和失去哪个更有害？过分吝惜必然大耗费，储藏太多必然大损失。知道满足就不受辱，知道停止就不危险，这样才可以长久。",
+      "key": "知足不辱，知止不殆"
+    },
+    {
+      "chapter": 45,
+      "title": "洪德",
+      "text": "大成若缺，其用不弊。大盈若冲，其用不穷。大直若屈，大巧若拙，大辩若讷。躁胜寒，静胜热。清静为天下正。",
+      "pinyin": "dà chéng ruò quē， qí yòng bù bì。 dà yíng ruò chōng， qí yòng bù qióng。 dà zhí ruò qū， dà qiǎo ruò zhuō， dà biàn ruò nè。 zào shèng hán， jìng shèng rè。 qīng jìng wèi tiān xià zhèng。",
+      "explain": "最完满的好像有欠缺，但作用不会衰竭；最充盈的好像很空虚，但作用无穷。最直的好像弯曲，最巧的好像笨拙，最好的口才好像木讷。清静才是天下的正道。",
+      "key": "大成若缺，其用不弊"
+    },
+    {
+      "chapter": 46,
+      "title": "俭欲",
+      "text": "天下有道，却走马以粪。天下无道，戎马生于郊。祸莫大于不知足；咎莫大于欲得。故知足之足，常足矣。",
+      "pinyin": "tiān xià yǒu dào， què zǒu mǎ yǐ fèn。 tiān xià wú dào， róng mǎ shēng yú jiāo。 huò mò dà yú bù zhī zú； jiù mò dà yú yù dé。 gù zhī zú zhī zú， cháng zú yǐ。",
+      "explain": "天下有道时，战马退还去耕田；天下无道时，怀胎的母马也要在战场上产驹。最大的祸患莫过于不知满足，最大的过错莫过于贪得。所以懂得满足的那种满足，才是长久的满足。",
+      "key": "祸莫大于不知足"
+    },
+    {
+      "chapter": 47,
+      "title": "鉴远",
+      "text": "不出户，知天下；不窥牖，见天道。其出弥远，其知弥少。是以圣人不行而知，不见而名，不为而成。",
+      "pinyin": "bù chū hù， zhī tiān xià； bù kuī yǒu， jiàn tiān dào。 qí chū mí yuǎn， qí zhī mí shǎo。 shì yǐ shèng rén bù xíng ér zhī， bú jiàn ér míng， bù wèi ér chéng。",
+      "explain": "不出门也能知天下，不望窗外也能见天道。走得越远，知道的反而越少。所以圣人不必亲历就能知晓，不必亲见就能明白，不必强为就能成事。",
+      "key": "不出户，知天下"
+    },
+    {
+      "chapter": 48,
+      "title": "忘知",
+      "text": "为学日益，为道日损。损之又损，以至于无为。无为而无不为。取天下常以无事，及其有事，不足以取天下。",
+      "pinyin": "wèi xué rì yì， wèi dào rì sǔn。 sǔn zhī yòu sǔn， yǐ zhì yú wú wéi。 wú wéi ér wú bù wèi。 qǔ tiān xià cháng yǐ wú shì， jí qí yǒu shì， bù zú yǐ qǔ tiān xià。",
+      "explain": "求学问是一天天增加，求大道是一天天减损。减了又减，直到无为的境地——无为，却没有什么做不成。治理天下要靠无事，一旦多事，就不足以治天下了。",
+      "key": "为学日益，为道日损"
+    },
+    {
+      "chapter": 49,
+      "title": "任德",
+      "text": "圣人无常心，以百姓心为心。善者，吾善之；不善者，吾亦善之，德善。信者，吾信之；不信者，吾亦信之，德信。圣人在，天下歙歙，为天下浑其心，百姓皆注其耳目，圣人皆孩之。",
+      "pinyin": "shèng rén wú cháng xīn， yǐ bǎi xìng xīn wèi xīn。 shàn zhě， wú shàn zhī； bù shàn zhě， wú yì shàn zhī， dé shàn。 xìn zhě， wú xìn zhī； bù xìn zhě， wú yì xìn zhī， dé xìn。 shèng rén zài， tiān xià shè shè， wèi tiān xià hún qí xīn， bǎi xìng jiē zhù qí ěr mù， shèng rén jiē hái zhī。",
+      "explain": "圣人没有固执的成见，把百姓的心当作自己的心。善的人我善待他，不善的人我也善待他，这样才得到真正的善；守信的我信他，不守信的我也信他，这样才得到真正的信。",
+      "key": "圣人无常心，以百姓心为心"
+    },
+    {
+      "chapter": 50,
+      "title": "贵生",
+      "text": "出生入死。生之徒，十有三；死之徒，十有三；人之生，动之死地，亦十有三。夫何故？以其生生之厚。盖闻善摄生者，陆行不遇兕虎，入军不被甲兵；兕无所投其角，虎无所措其爪，兵无所容其刃。夫何故？以其无死地。",
+      "pinyin": "chū shēng rù sǐ。 shēng zhī tú， shí yǒu sān； sǐ zhī tú， shí yǒu sān； rén zhī shēng， dòng zhī sǐ dì， yì shí yǒu sān。 fú hé gù？ yǐ qí shēng shēng zhī hòu。 gài wén shàn shè shēng zhě， lù xíng bù yù sì hǔ， rù jūn bù pī jiǎ bīng； sì wú suǒ tóu qí jiǎo， hǔ wú suǒ cuò qí zhǎo， bīng wú suǒ róng qí rèn。 fú hé gù？ yǐ qí wú sǐ dì。",
+      "explain": "人出世入死：长寿的十分之三，短命的十分之三，本可以活却自己走向死地的也占十分之三——因为奉养太过。善于养生的人，陆行不遇猛兽，入军不受兵刃，因为他身上没有可以致死的地方。",
+      "key": "以其无死地"
+    },
+    {
+      "chapter": 51,
+      "title": "养德",
+      "text": "道生之，德畜之，物形之，势成之。是以万物莫不尊道而贵德。道之尊，德之贵，夫莫之命而常自然。故道生之，德畜之。长之育之，亭之毒之，养之覆之。生而不有，为而不恃，长而不宰。是谓玄德。",
+      "pinyin": "dào shēng zhī， dé chù zhī， wù xíng zhī， shì chéng zhī。 shì yǐ wàn wù mò bù zūn dào ér guì dé。 dào zhī zūn， dé zhī guì， fú mò zhī mìng ér cháng zì rán。 gù dào shēng zhī， dé chù zhī。 zhǎng zhī yù zhī， tíng zhī dú zhī， yǎng zhī fù zhī。 shēng ér bù yǒu， wéi ér bù shì， zhǎng ér bù zǎi。 shì wèi xuán dé。",
+      "explain": "道生成万物，德养育万物，物形成形体，势使它完成。所以万物没有不尊道贵德的。这种尊贵不是谁封的，而是自然如此。生养它却不占有，作为却不自恃，长成它却不主宰——这就叫玄德。",
+      "key": "生而不有，为而不恃，长而不宰"
+    },
+    {
+      "chapter": 52,
+      "title": "归元",
+      "text": "天下有始，以为天下母。既得其母，以知其子，既知其子，复守其母，没身不殆。塞其兑，闭其门，终身不勤。开其兑，济其事，终身不救。见小曰明，守柔曰强。用其光，复归其明，无遗身殃，是为习常。",
+      "pinyin": "tiān xià yǒu shǐ， yǐ wéi tiān xià mǔ。 jì dé qí mǔ， yǐ zhī qí zi， jì zhī qí zi， fù shǒu qí mǔ， méi shēn bù dài。 sè qí duì， bì qí mén， zhōng shēn bù qín。 kāi qí duì， jì qí shì， zhōng shēn bù jiù。 jiàn xiǎo yuē míng， shǒu róu yuē qiáng。 yòng qí guāng， fù guī qí míng， wú yí shēn yāng， shì wèi xí cháng。",
+      "explain": "天下有个开端，可视为天下的母亲。得到了母亲，就能认识她的儿女；认识了儿女，再回来守住母亲，终身不会有危险。堵住嗜欲的孔窍，关上欲望的门，终身不劳累。能见微小叫明，能守柔弱叫强。",
+      "key": "见小曰明，守柔曰强"
+    },
+    {
+      "chapter": 53,
+      "title": "益证",
+      "text": "使我介然有知，行于大道，唯施是畏。大道甚夷，而民好径。朝甚除，田甚芜，仓甚虚；服文彩，带利剑，厌饮食，财货有余；是为夸盗。非道也哉！",
+      "pinyin": "shǐ wǒ jiè rán yǒu zhī， xíng yú dà dào， wéi shī shì wèi。 dà dào shèn yí， ér mín hào jìng。 cháo shèn chú， tián shèn wú， cāng shèn xū； fú wén cǎi， dài lì jiàn， yàn yǐn shí， cái huò yǒu yú； shì wèi kuā dào。 fēi dào yě zāi！",
+      "explain": "假使我稍有点见识，走在大道上，最怕的就是走岔路。大道很平坦，人却偏爱走小路。朝廷华丽，田地荒芜，仓库空虚，却还穿锦衣、佩利剑、饱饮食、财货有余——这叫强盗头子，不合于道啊。",
+      "key": "大道甚夷，而民好径"
+    },
+    {
+      "chapter": 54,
+      "title": "修观",
+      "text": "善建者不拔，善抱者不脱，子孙以祭祀不辍。修之于身，其德乃真；修之于家，其德乃余；修之于乡，其德乃长；修之于国，其德乃丰；修之于天下，其德乃普。故以身观身，以家观家，以乡观乡，以国观国，以天下观天下。吾何以知天下然哉？以此。",
+      "pinyin": "shàn jiàn zhě bù bá， shàn bào zhě bù tuō， zǐ sūn yǐ jì sì bù chuò。 xiū zhī yú shēn， qí dé nǎi zhēn； xiū zhī yú jiā， qí dé nǎi yú； xiū zhī yú xiāng， qí dé nǎi zhǎng； xiū zhī yú guó， qí dé nǎi fēng； xiū zhī yú tiān xià， qí dé nǎi pǔ。 gù yǐ shēn guān shēn， yǐ jiā guān jiā， yǐ xiāng guān xiāng， yǐ guó guān guó， yǐ tiān xià guān tiān xià。 wú hé yǐ zhī tiān xià rán zāi？ yǐ cǐ。",
+      "explain": "善于建立的不会被拔除，善于抱持的不会脱落。修养落在自身，德就真实；落在家，德就有余；落在乡，德就长久；落在国，德就丰盛；落在天下，德就普遍。所以要以自身观照自身，以天下观照天下。",
+      "key": "以身观身，以家观家"
+    },
+    {
+      "chapter": 55,
+      "title": "玄符",
+      "text": "含德之厚，比于赤子。蜂虿虺蛇不螫，猛兽不据，攫鸟不搏。骨弱筋柔而握固。未知牝牡之合而全作，精之至也。终日号而不嗄，和之至也。知和曰常，知常曰明。益生曰祥。心使气曰强。物壮则老，谓之不道，不道早已。",
+      "pinyin": "hán dé zhī hòu， bǐ yú chì zi。 fēng chài huǐ shé bù shì， měng shòu bù jù， jué niǎo bù bó。 gǔ ruò jīn róu ér wò gù。 wèi zhī pìn mǔ zhī hé ér quán zuò， jīng zhī zhì yě。 zhōng rì háo ér bù shà， hé zhī zhì yě。 zhī hé yuē cháng， zhī cháng yuē míng。 yì shēng yuē xiáng。 xīn shǐ qì yuē qiáng。 wù zhuàng zé lǎo， wèi zhī bù dào， bù dào zǎo yǐ。",
+      "explain": "含德深厚的人，好比初生的婴儿：毒虫不螫他，猛兽不伤他。骨弱筋柔而握拳很牢，整天号哭嗓子却不哑——这是和谐到了极点。懂得和谐叫常，懂得常道叫明。刻意求生反成灾殃。",
+      "key": "知和曰常，知常曰明"
+    },
+    {
+      "chapter": 56,
+      "title": "玄德",
+      "text": "知者不言，言者不知。塞其兑，闭其门，挫其锐，解其分，和其光，同其尘，是谓玄同。故不可得而亲，不可得而疏；不可得而利，不可得而害；不可得而贵，不可得而贱。故为天下贵。",
+      "pinyin": "zhī zhě bù yán， yán zhě bù zhī。 sè qí duì， bì qí mén， cuò qí ruì， jiě qí fēn， hé qí guāng， tóng qí chén， shì wèi xuán tóng。 gù bù kě dé ér qīn， bù kě dé ér shū； bù kě dé ér lì， bù kě dé ér hài； bù kě dé ér guì， bù kě dé ér jiàn。 gù wèi tiān xià guì。",
+      "explain": "真懂的人不多言，多言的人不真懂。堵住孔窍，关上门户，磨去锋芒，化解纷扰，收敛光芒，混同尘世——这叫玄同。达到这境界的人，无法被亲近也无法被疏远，无法被利诱也无法被损害。",
+      "key": "知者不言，言者不知"
+    },
+    {
+      "chapter": 57,
+      "title": "淳风",
+      "text": "以正治国，以奇用兵，以无事取天下。吾何以知其然哉？以此。天下多忌讳，而民弥贫；民多利器，国家滋昏；人多伎巧，奇物滋起；法令滋彰，盗贼多有。故圣人云：我无为而民自化，我好静而民自正，我无事而民自富，我无欲而民自朴。",
+      "pinyin": "yǐ zhèng zhì guó， yǐ qí yòng bīng， yǐ wú shì qǔ tiān xià。 wú hé yǐ zhī qí rán zāi？ yǐ cǐ。 tiān xià duō jì huì， ér mín mí pín； mín duō lì qì， guó jiā zī hūn； rén duō jì qiǎo， qí wù zī qǐ； fǎ lìng zī zhāng， dào zéi duō yǒu。 gù shèng rén yún： wǒ wú wéi ér mín zì huà， wǒ hǎo jìng ér mín zì zhèng， wǒ wú shì ér mín zì fù， wǒ wú yù ér mín zì pǔ。",
+      "explain": "治国要正，用兵要奇，取天下要靠无事。天下禁忌越多，百姓越穷；法令越森严，盗贼越多。所以圣人说：我无为，百姓自会化育；我好静，百姓自会端正；我无事，百姓自会富足；我无欲，百姓自会淳朴。",
+      "key": "我无为而民自化"
+    },
+    {
+      "chapter": 58,
+      "title": "顺化",
+      "text": "其政闷闷，其民淳淳；其政察察，其民缺缺。祸兮福之所倚，福兮祸之所伏。孰知其极？其无正。正复为奇，善复为妖。人之迷，其日固久。是以圣人方而不割，廉而不刿，直而不肆，光而不耀。",
+      "pinyin": "qí zhèng mèn mèn， qí mín chún chún； qí zhèng chá chá， qí mín quē quē。 huò xī fú zhī suǒ yǐ， fú xī huò zhī suǒ fú。 shú zhī qí jí？ qí wú zhèng。 zhèng fù wèi qí， shàn fù wèi yāo。 rén zhī mí， qí rì gù jiǔ。 shì yǐ shèng rén fāng ér bù gē， lián ér bù guì， zhí ér bù sì， guāng ér bù yào。",
+      "explain": "政治宽厚，民风就淳朴；政治苛察，民风就浇薄。灾祸里倚着福气，福气里藏着灾祸。谁知道究竟？正会转为奇，善会转为妖。所以圣人方正而不割伤人，锐利而不刺伤人，明亮而不炫耀。",
+      "key": "祸兮福之所倚，福兮祸之所伏"
+    },
+    {
+      "chapter": 59,
+      "title": "守道",
+      "text": "治人事天，莫若啬。夫唯啬，是谓早服；早服谓之重积德；重积德则无不克，无不克则莫知其极；莫知其极，可以有国；有国之母，可以长久；是谓深根固柢，长生久视之道。",
+      "pinyin": "zhì rén shì tiān， mò ruò sè。 fú wéi sè， shì wèi zǎo fú； zǎo fú wèi zhī zhòng jī dé； zhòng jī dé zé wú bù kè， wú bù kè zé mò zhī qí jí； mò zhī qí jí， kě yǐ yǒu guó； yǒu guó zhī mǔ， kě yǐ cháng jiǔ； shì wèi shēn gēn gù dǐ， cháng shēng jiǔ shì zhī dào。",
+      "explain": "治理人事、奉养天性，没有比爱惜精力更重要的。唯有爱惜，才叫早作准备；早作准备叫厚积德；德积厚了就无往不克。这样才可以持守国家，也才是根深柢固、长久存续之道。",
+      "key": "深根固柢，长生久视之道"
+    },
+    {
+      "chapter": 60,
+      "title": "居位",
+      "text": "治大国，若烹小鲜。以道莅天下，其鬼不神；非其鬼不神，其神不伤人；非其神不伤人，圣人亦不伤人。夫两不相伤，故德交归焉。",
+      "pinyin": "zhì dà guó， ruò pēng xiǎo xiān。 yǐ dào lì tiān xià， qí guǐ bù shén； fēi qí guǐ bù shén， qí shén bù shāng rén； fēi qí shén bù shāng rén， shèng rén yì bù shāng rén。 fú liǎng bù xiāng shāng， gù dé jiāo guī yān。",
+      "explain": "治理大国要像煎小鱼，不能老翻动。用道来临御天下，鬼怪就不起作用；不是鬼怪不起作用，而是它伤不到人；不但伤不到人，圣人也不伤人。两边都不相伤，德就归聚于此。",
+      "key": "治大国，若烹小鲜"
+    },
+    {
+      "chapter": 61,
+      "title": "谦德",
+      "text": "大国者下流，天下之交。天下之牝，牝常以静胜牡，以静为下。故大国以下小国，则取小国；小国以下大国，则取大国。故或下以取，或下而取。大国不过欲兼畜人，小国不过欲入事人。夫两者各得其所欲，大者宜为下。",
+      "pinyin": "dà guó zhě xià liú， tiān xià zhī jiāo。 tiān xià zhī pìn， pìn cháng yǐ jìng shèng mǔ， yǐ jìng wèi xià。 gù dà guó yǐ xià xiǎo guó， zé qǔ xiǎo guó； xiǎo guó yǐ xià dà guó， zé qǔ dà guó。 gù huò xià yǐ qǔ， huò xià ér qǔ。 dà guó bù guò yù jiān chù rén， xiǎo guó bù guò yù rù shì rén。 fú liǎng zhě gè dé qí suǒ yù， dà zhě yí wèi xià。",
+      "explain": "大国要像居于江河下游，是天下交汇之处，是天下的雌柔。雌柔常以静胜过雄强，因为它甘居下位。大国对小国谦下，就能取得小国；小国对大国谦下，就能被大国容纳。大的一方尤其应该谦下。",
+      "key": "大国者下流，天下之交"
+    },
+    {
+      "chapter": 62,
+      "title": "为道",
+      "text": "道者万物之奥。善人之宝，不善人之所保。美言可以市，尊行可以加人。人之不善，何弃之有？故立天子，置三公，虽有拱璧以先驷马，不如坐进此道。古之所以贵此道者何？不曰：以求得，有罪以免邪？故为天下贵。",
+      "pinyin": "dào zhě wàn wù zhī ào。 shàn rén zhī bǎo， bù shàn rén zhī suǒ bǎo。 měi yán kě yǐ shì， zūn xíng kě yǐ jiā rén。 rén zhī bù shàn， hé qì zhī yǒu？ gù lì tiān zi， zhì sān gōng， suī yǒu gǒng bì yǐ xiān sì mǎ， bù rú zuò jìn cǐ dào。 gǔ zhī suǒ yǐ guì cǐ dào zhě hé？ bù yuē： yǐ qiú dé， yǒu zuì yǐ miǎn yé？ gù wèi tiān xià guì。",
+      "explain": "道是万物的庇荫，是善人的珍宝，也是不善之人的保障。漂亮话可以换取尊重，好行为可以见重于人；就算不善的人，又怎么能舍弃他呢？所以册立天子、设置三公，献上厚礼驷马，都不如安坐献上这个道。",
+      "key": "道者万物之奥"
+    },
+    {
+      "chapter": 63,
+      "title": "恩始",
+      "text": "为无为，事无事，味无味。大小多少，报怨以德。图难于其易，为大于其细；天下难事必作于易，天下大事必作于细。是以圣人终不为大，故能成其大。夫轻诺必寡信，多易必多难。是以圣人犹难之，故终无难矣。",
+      "pinyin": "wèi wú wéi， shì wú shì， wèi wú wèi。 dà xiǎo duō shǎo， bào yuàn yǐ dé。 tú nán yú qí yì， wèi dà yú qí xì； tiān xià nán shì bì zuò yú yì， tiān xià dà shì bì zuò yú xì。 shì yǐ shèng rén zhōng bù wèi dà， gù néng chéng qí dà。 fú qīng nuò bì guǎ xìn， duō yì bì duō nán。 shì yǐ shèng rén yóu nán zhī， gù zhōng wú nán yǐ。",
+      "explain": "以无为的态度作为，以不搅扰的方式做事，把无味当作味。用德报答怨恨。解决难题要趁它还容易时，成就大事要从细微处入手。所以圣人始终不自以为大，反而成就了大。轻易许诺必然少信用。",
+      "key": "天下难事必作于易，天下大事必作于细"
+    },
+    {
+      "chapter": 64,
+      "title": "守微",
+      "text": "其安易持，其未兆易谋。其脆易泮，其微易散。为之于未有，治之于未乱。合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。为者败之，执者失之。是以圣人无为故无败，无执故无失。民之从事，常于几成而败之。慎终如始，则无败事。是以圣人欲不欲，不贵难得之货；学不学，复众人之所过。以辅万物之自然，而不敢为。",
+      "pinyin": "qí ān yì chí， qí wèi zhào yì móu。 qí cuì yì pàn， qí wēi yì sàn。 wèi zhī yú wèi yǒu， zhì zhī yú wèi luàn。 hé bào zhī mù， shēng yú háo mò； jiǔ céng zhī tái， qǐ yú léi tǔ； qiān lǐ zhī xíng， shǐ yú zú xià。 wèi zhě bài zhī， zhí zhě shī zhī。 shì yǐ shèng rén wú wéi gù wú bài， wú zhí gù wú shī。 mín zhī cóng shì， cháng yú jǐ chéng ér bài zhī。 shèn zhōng rú shǐ， zé wú bài shì。 shì yǐ shèng rén yù bù yù， bù guì nán dé zhī huò； xué bù xué， fù zhòng rén zhī suǒ guò。 yǐ fǔ wàn wù zhī zì rán， ér bù gǎn wèi。",
+      "explain": "安稳时容易持守，未显露时容易谋划。合抱的大树生于细芽，九层高台起于一筐土，千里远行始于脚下一步。强为的会失败，把持的会失去。人做事常在快成功时失败——若能慎终如始，就不会失败。",
+      "key": "千里之行，始于足下"
+    },
+    {
+      "chapter": 65,
+      "title": "淳德",
+      "text": "古之善为道者，非以明民，将以愚之。民之难治，以其智多。故以智治国，国之贼；不以智治国，国之福。知此两者亦稽式。常知稽式，是谓玄德。玄德深矣，远矣，与物反矣，然后乃至大顺。",
+      "pinyin": "gǔ zhī shàn wèi dào zhě， fēi yǐ míng mín， jiāng yǐ yú zhī。 mín zhī nán zhì， yǐ qí zhì duō。 gù yǐ zhì zhì guó， guó zhī zéi； bù yǐ zhì zhì guó， guó zhī fú。 zhī cǐ liǎng zhě yì jī shì。 cháng zhī jī shì， shì wèi xuán dé。 xuán dé shēn yǐ， yuǎn yǐ， yǔ wù fǎn yǐ， rán hòu nǎi zhì dà shùn。",
+      "explain": "古时善于行道的人，不是教百姓机巧，而是使他们淳厚。百姓难治，是因为智巧太多。所以用智巧治国是国家的祸害，不用智巧治国才是国家的福气。懂得这两条就是法则，这法则叫玄德。",
+      "key": "玄德深矣，远矣，与物反矣"
+    },
+    {
+      "chapter": 66,
+      "title": "后己",
+      "text": "江海所以能为百谷王者，以其善下之，故能为百谷王。是以欲上民，必以言下之。欲先民，必以身后之。是以圣人处上而民不重，处前而民不害。是以天下乐推而不厌，以其不争，故天下莫能与之争。",
+      "pinyin": "jiāng hǎi suǒ yǐ néng wèi bǎi gǔ wáng zhě， yǐ qí shàn xià zhī， gù néng wèi bǎi gǔ wáng。 shì yǐ yù shàng mín， bì yǐ yán xià zhī。 yù xiān mín， bì yǐ shēn hòu zhī。 shì yǐ shèng rén chǔ shàng ér mín bù zhòng， chǔ qián ér mín bù hài。 shì yǐ tiān xià lè tuī ér bù yàn， yǐ qí bù zhēng， gù tiān xià mò néng yǔ zhī zhēng。",
+      "explain": "江海之所以能成为百川之王，是因为它甘居下游。所以想居于民上，言辞必须谦下；想走在民前，必须把自身放在后面。这样处上位百姓不觉得沉重，处前面百姓不觉得妨碍。因为不争，天下没人能与他争。",
+      "key": "江海所以能为百谷王者，以其善下之"
+    },
+    {
+      "chapter": 67,
+      "title": "三宝",
+      "text": "天下皆谓我道大，似不肖。夫唯大，故似不肖。若肖，久矣其细也夫！我有三宝，持而保之。一曰慈，二曰俭，三曰不敢为天下先。慈故能勇；俭故能广；不敢为天下先，故能成器长。今舍慈且勇，舍俭且广，舍后且先，死矣！夫慈以战则胜，以守则固。天将救之，以慈卫之。",
+      "pinyin": "tiān xià jiē wèi wǒ dào dà， shì bù xiào。 fú wéi dà， gù shì bù xiào。 ruò xiào， jiǔ yǐ qí xì yě fú！ wǒ yǒu sān bǎo， chí ér bǎo zhī。 yī yuē cí， èr yuē jiǎn， sān yuē bù gǎn wéi tiān xià xiān。 cí gù néng yǒng； jiǎn gù néng guǎng； bù gǎn wéi tiān xià xiān， gù néng chéng qì zhǎng。 jīn shě cí qiě yǒng， shě jiǎn qiě guǎng， shě hòu qiě xiān， sǐ yǐ！ fú cí yǐ zhàn zé shèng， yǐ shǒu zé gù。 tiān jiāng jiù zhī， yǐ cí wèi zhī。",
+      "explain": "天下都说我的道大，大得不像样。正因为大，才不像样；若像个具体样子，早就渺小了。我有三件宝：一是慈爱，二是俭朴，三是不敢争先。慈才能勇，俭才能宽广，不争先才能成为器物之长。",
+      "key": "我有三宝，持而保之"
+    },
+    {
+      "chapter": 68,
+      "title": "配天",
+      "text": "善为士者不武，善战者不怒，善胜敌者不与，善用人者为之下，是谓不争之德，是谓用人之力，是谓配天古之极。",
+      "pinyin": "shàn wéi shì zhě bù wǔ， shàn zhàn zhě bù nù， shàn shèng dí zhě bù yǔ， shàn yòng rén zhě wèi zhī xià， shì wèi bù zhēng zhī dé， shì wèi yòng rén zhī lì， shì wèi pèi tiān gǔ zhī jí。",
+      "explain": "善做将帅的不逞勇武，善作战的不轻易发怒，善胜敌的不与人正面相争，善用人的甘居人下。这叫不争的德，这叫善用人的力量，这叫合于天道、合于自古以来的准则。",
+      "key": "善为士者不武，善战者不怒"
+    },
+    {
+      "chapter": 69,
+      "title": "玄用",
+      "text": "用兵有言：吾不敢为主而为客，不敢进寸而退尺。是谓行无行，攘无臂，扔无敌，执无兵。祸莫大于轻敌，轻敌几丧吾宝。故抗兵相加，哀者胜矣。",
+      "pinyin": "yòng bīng yǒu yán： wú bù gǎn wéi zhǔ ér wèi kè， bù gǎn jìn cùn ér tuì chǐ。 shì wèi xíng wú xíng， rǎng wú bì， rēng wú dí， zhí wú bīng。 huò mò dà yú qīng dí， qīng dí jǐ sàng wú bǎo。 gù kàng bīng xiāng jiā， āi zhě shèng yǐ。",
+      "explain": "用兵的人说过：我不敢主动进攻而宁可防守，不敢前进一寸而宁可后退一尺。这叫做没有阵形的行阵、没有臂膀的举臂、没有敌人的对阵。祸患没有比轻敌更大的，轻敌几乎丧失我的珍宝。两军相当，悲悯的一方获胜。",
+      "key": "祸莫大于轻敌"
+    },
+    {
+      "chapter": 70,
+      "title": "知难",
+      "text": "吾言甚易知，甚易行。天下莫能知，莫能行。言有宗，事有君。夫唯无知，是以不我知。知我者希，则我者贵。是以圣人被褐怀玉。",
+      "pinyin": "wú yán shèn yì zhī， shèn yì xíng。 tiān xià mò néng zhī， mò néng xíng。 yán yǒu zōng， shì yǒu jūn。 fú wéi wú zhī， shì yǐ bù wǒ zhī。 zhī wǒ zhě xī， zé wǒ zhě guì。 shì yǐ shèng rén pī hè huái yù。",
+      "explain": "我的话很容易懂，很容易做，天下却没人能懂、没人能做。言论有宗旨，做事有根据。正因为人们不理解这个，所以不了解我。了解我的人越少，效法我的就越可贵。所以圣人穿着粗布衣裳，怀里揣着美玉。",
+      "key": "知我者希，则我者贵"
+    },
+    {
+      "chapter": 71,
+      "title": "知病",
+      "text": "知不知上，不知知病。夫唯病病，是以不病。圣人不病，以其病病，是以不病。",
+      "pinyin": "zhī bù zhī shàng， bù zhī zhī bìng。 fú wéi bìng bìng， shì yǐ bù bìng。 shèng rén bù bìng， yǐ qí bìng bìng， shì yǐ bù bìng。",
+      "explain": "知道自己还有所不知，是高明；不知道却自以为知道，是毛病。正因为把毛病当毛病来对待，所以才没有毛病。圣人没有毛病，正因为他把毛病当毛病。",
+      "key": "知不知上，不知知病"
+    },
+    {
+      "chapter": 72,
+      "title": "爱己",
+      "text": "民不畏威，则大威至。无狎其所居，无厌其所生。夫唯不厌，是以不厌。是以圣人自知不自见；自爱不自贵。故去彼取此。",
+      "pinyin": "mín bù wèi wēi， zé dà wēi zhì。 wú xiá qí suǒ jū， wú yàn qí suǒ shēng。 fú wéi bù yàn， shì yǐ bù yàn。 shì yǐ shèng rén zì zhī bù zì xiàn； zì ài bù zì guì。 gù qù bǐ qǔ cǐ。",
+      "explain": "百姓不畏惧威压时，更大的祸乱就要来了。不要逼迫他们的居所，不要压榨他们的生计。正因为不压榨，百姓才不厌弃。所以圣人有自知而不自我表现，自爱而不自显高贵。",
+      "key": "圣人自知不自见；自爱不自贵"
+    },
+    {
+      "chapter": 73,
+      "title": "任为",
+      "text": "勇于敢则杀，勇于不敢则活。此两者，或利或害。天之所恶，孰知其故？是以圣人犹难之。天之道，不争而善胜，不言而善应，不召而自来，繟然而善谋。天网恢恢，疏而不失。",
+      "pinyin": "yǒng yú gǎn zé shā， yǒng yú bù gǎn zé huó。 cǐ liǎng zhě， huò lì huò hài。 tiān zhī suǒ wù， shú zhī qí gù？ shì yǐ shèng rén yóu nán zhī。 tiān zhī dào， bù zhēng ér shàn shèng， bù yán ér shàn yīng， bù zhào ér zì lái， chǎn rán ér shàn móu。 tiān wǎng huī huī， shū ér bù shī。",
+      "explain": "勇于逞强就会送命，勇于收敛才能活命。这两者，有的得利有的受害。天所厌恶的，谁知道原因？天道不争而善于取胜，不言而善于回应，不召唤而自来，宽缓而善于谋划。天网广大，稀疏却不漏失。",
+      "key": "天网恢恢，疏而不失"
+    },
+    {
+      "chapter": 74,
+      "title": "制惑",
+      "text": "民不畏死，奈何以死惧之？若使民常畏死，而为奇者，吾得执而杀之，孰敢？常有司杀者杀，夫代司杀者杀，是谓代大匠斲，夫代大匠斲者，希有不伤其手矣。",
+      "pinyin": "mín bù wèi sǐ， nài hé yǐ sǐ jù zhī？ ruò shǐ mín cháng wèi sǐ， ér wèi qí zhě， wú dé zhí ér shā zhī， shú gǎn？ cháng yǒu sī shā zhě shā， fú dài sī shā zhě shā， shì wèi dài dà jiàng zhuó， fū dài dà jiàng zhuó zhě， xī yǒu bù shāng qí shǒu yǐ。",
+      "explain": "百姓不怕死，拿死来吓唬他们有什么用？如果百姓真怕死，对作乱的人抓来杀掉，谁还敢作乱？可是自有专管杀伐的在，代替行刑者去杀，就像代替木匠去砍木头——代木匠砍的，很少有不砍伤自己手的。",
+      "key": "代大匠斲者，希有不伤其手矣"
+    },
+    {
+      "chapter": 75,
+      "title": "贪损",
+      "text": "民之饥，以其上食税之多，是以饥。民之难治，以其上之有为，是以难治。民之轻死，以其求生之厚，是以轻死。夫唯无以生为者，是贤于贵生。",
+      "pinyin": "mín zhī jī， yǐ qí shàng shí shuì zhī duō， shì yǐ jī。 mín zhī nán zhì， yǐ qí shàng zhī yǒu wéi， shì yǐ nán zhì。 mín zhī qīng sǐ， yǐ qí qiú shēng zhī hòu， shì yǐ qīng sǐ。 fú wéi wú yǐ shēng wèi zhě， shì xián yú guì shēng。",
+      "explain": "百姓挨饿，是因为上面收税太多；百姓难治，是因为上面妄为；百姓轻视死亡，是因为上面奉养太厚。唯有不把自己的享受当回事的人，才胜过那些看重享乐的人。",
+      "key": "民之饥，以其上食税之多"
+    },
+    {
+      "chapter": 76,
+      "title": "戒强",
+      "text": "人之生也柔弱，其死也坚强。万物草木之生也柔脆，其死也枯槁。故坚强者死之徒，柔弱者生之徒。是以兵强则不胜，木强则兵。强大处下，柔弱处上。",
+      "pinyin": "rén zhī shēng yě róu ruò， qí sǐ yě jiān qiáng。 wàn wù cǎo mù zhī shēng yě róu cuì， qí sǐ yě kū gǎo。 gù jiān qiáng zhě sǐ zhī tú， róu ruò zhě shēng zhī tú。 shì yǐ bīng qiáng zé bù shèng， mù qiáng zé bīng。 qiáng dà chǔ xià， róu ruò chǔ shàng。",
+      "explain": "人活着时身体柔软，死了就僵硬；草木活着时柔脆，死了就干枯。所以坚强属于死亡一类，柔弱属于生存一类。军队逞强就会覆灭，树木强壮就会被砍。强大的居于下位，柔弱的反居上位。",
+      "key": "柔弱者生之徒"
+    },
+    {
+      "chapter": 77,
+      "title": "天道",
+      "text": "天之道，其犹张弓与？高者抑之，下者举之；有余者损之，不足者补之。天之道，损有余而补不足。人之道则不然，损不足以奉有余。孰能有余以奉天下，唯有道者。是以圣人为而不恃，功成而不处，其不欲见贤。",
+      "pinyin": "tiān zhī dào， qí yóu zhāng gōng yú？ gāo zhě yì zhī， xià zhě jǔ zhī； yǒu yú zhě sǔn zhī， bù zú zhě bǔ zhī。 tiān zhī dào， sǔn yǒu yú ér bǔ bù zú。 rén zhī dào zé bù rán， sǔn bù zú yǐ fèng yǒu yú。 shú néng yǒu yú yǐ fèng tiān xià， wéi yǒu dào zhě。 shì yǐ shèng rén wéi ér bù shì， gōng chéng ér bù chǔ， qí bù yù xiàn xián。",
+      "explain": "天道就像拉弓：高了就压低，低了就抬高；多余的减损，不足的补上。天道是减有余而补不足，人的做法却相反，是剥夺不足去奉养有余。谁能把有余拿出来奉献天下？只有得道的人。",
+      "key": "天之道，损有余而补不足"
+    },
+    {
+      "chapter": 78,
+      "title": "任信",
+      "text": "天下莫柔弱于水，而攻坚强者莫之能胜，其无以易之。弱之胜强，柔之胜刚，天下莫不知莫能行。是以圣人云：受国之垢，是谓社稷主；受国不祥，是为天下王。正言若反。",
+      "pinyin": "tiān xià mò róu ruò yú shuǐ， ér gōng jiān qiáng zhě mò zhī néng shèng， qí wú yǐ yì zhī。 ruò zhī shèng qiáng， róu zhī shèng gāng， tiān xià mò bù zhī mò néng xíng。 shì yǐ shèng rén yún： shòu guó zhī gòu， shì wèi shè jì zhǔ； shòu guó bù xiáng， shì wèi tiān xià wáng。 zhèng yán ruò fǎn。",
+      "explain": "天下没有比水更柔弱的，可攻克坚强的东西没有能胜过水的，没什么能替代它。柔弱胜过刚强，天下没人不懂，却没人做得到。所以圣人说：能承受一国的屈辱，才配做社稷之主。正面的话听起来像反话。",
+      "key": "天下莫柔弱于水，而攻坚强者莫之能胜"
+    },
+    {
+      "chapter": 79,
+      "title": "任契",
+      "text": "和大怨，必有余怨，安可以为善？是以圣人执左契，而不责于人。有德司契，无德司彻。天道无亲，常与善人。",
+      "pinyin": "hé dà yuàn， bì yǒu yú yuàn， ān kě yǐ wèi shàn？ shì yǐ shèng rén zhí zuǒ qì， ér bù zé yú rén。 yǒu dé sī qì， wú dé sī chè。 tiān dào wú qīn， cháng yǔ shàn rén。",
+      "explain": "调解大的怨恨，必定还留有余怨，这怎么算妥善？所以圣人拿着借据的存根却不逼债。有德的人像持契的一方那样宽厚，无德的人像收税的一样苛刻。天道不分亲疏，永远站在善人一边。",
+      "key": "天道无亲，常与善人"
+    },
+    {
+      "chapter": 80,
+      "title": "独立",
+      "text": "小国寡民。使有什伯之器而不用，使民重死而不远徙。虽有舟舆，无所乘之，虽有甲兵，无所陈之。使人复结绳而用之，甘其食，美其服，安其居，乐其俗。邻国相望，鸡犬之声相闻，民至老死，不相往来。",
+      "pinyin": "xiǎo guó guǎ mín。 shǐ yǒu shí bǎi zhī qì ér bù yòng， shǐ mín zhòng sǐ ér bù yuǎn xǐ。 suī yǒu zhōu yú， wú suǒ chéng zhī， suī yǒu jiǎ bīng， wú suǒ chén zhī。 shǐ rén fù jié shéng ér yòng zhī， gān qí shí， měi qí fú， ān qí jū， lè qí sú。 lín guó xiāng wàng， jī quǎn zhī shēng xiāng wén， mín zhì lǎo sǐ， bù xiāng wǎng lái。",
+      "explain": "国家小，人民少。即使有各种器械也不使用，让人们看重生命而不远迁。虽有舟车却不必乘，虽有兵甲却不必陈列。让人们觉得饭菜香甜、衣服美好、住处安适、习俗快乐。邻国相望，鸡犬之声相闻，人民到老死也不相往来。",
+      "key": "甘其食，美其服，安其居，乐其俗"
+    },
+    {
+      "chapter": 81,
+      "title": "显质",
+      "text": "信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。",
+      "pinyin": "xìn yán bù měi， měi yán bù xìn。 shàn zhě bù biàn， biàn zhě bù shàn。 zhī zhě bù bó， bó zhě bù zhī。 shèng rén bù jī， jì yǐ wéi rén jǐ yù yǒu， jì yǐ yǔ rén jǐ yù duō。 tiān zhī dào， lì ér bù hài； shèng rén zhī dào， wèi ér bù zhēng。",
+      "explain": "真实的话不漂亮，漂亮的话不真实。良善的人不巧辩，巧辩的人不良善。真懂的人不炫博，炫博的人不真懂。圣人不为自己囤积，越是帮助别人自己越充实，越是给予别人自己越丰足。天道利万物而不伤害，圣人之道是做事而不争夺。",
+      "key": "信言不美，美言不信"
     }
   ]
 }

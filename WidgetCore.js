@@ -346,9 +346,9 @@ function buildSmall(widget, view, t) {
   const hasTasks = view.tasks && view.tasks.length > 0;
 
   const q = main.addText(view.primary);
-  q.font = Font.systemFont(hasTasks ? 11 : 12.5);
+  q.font = Font.systemFont(view.primaryFontSmall || (hasTasks ? 11 : 12.5));
   q.textColor = color(t.textPrimary);
-  q.lineLimit = hasTasks ? 2 : 3;
+  q.lineLimit = view.primaryLinesSmall || (hasTasks ? 2 : 3);
   q.minimumScaleFactor = 0.6;
 
   if (!hasTasks && view.secondary) {
@@ -413,10 +413,10 @@ function buildMedium(widget, view, t) {
   const hasTasks = view.tasks && view.tasks.length > 0;
 
   const q = main.addText(view.primary);
-  q.font = Font.systemFont(hasTasks ? 13 : 15);
+  q.font = Font.systemFont(view.primaryFont || (hasTasks ? 13 : 15));
   q.textColor = color(t.textPrimary);
-  q.lineLimit = 2;
-  q.minimumScaleFactor = 0.7;
+  q.lineLimit = view.primaryLines || 2;
+  q.minimumScaleFactor = 0.6;
 
   if (view.secondary) {
     const s = main.addText(view.secondary);
