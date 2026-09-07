@@ -133,6 +133,7 @@ if (config.runsInApp) {
       "\n\n已有安排 " + (result.existing === undefined ? "—" : result.existing) +
       " 条，补充 " + result.added +
       " 条" + (result.cleaned ? "，清理过期 " + result.cleaned + " 条" : "") +
+      (result.replaced ? "，替换今日旧的 " + result.replaced + " 条" : "") +
       "\n任务库共 " + pool.length + " 条" +
       (bgNote ? "\n" + bgNote : "");
   }

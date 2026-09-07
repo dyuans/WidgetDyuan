@@ -197,6 +197,17 @@ ok(store.reminders.every((r) => r.dueDateIncludesTime === false), "只标日期�
 res = await TaskStore.generateToday({ listName: LIST, pool, target: 3 });
 ok(res.status === "already" && store.reminders.length === 3, "同一天再跑不会重复创建");
 
+// 场景 B2：force 手动重跑 —— 必须替换而不是叠加（曾经在这里堆出 6 条）
+const beforeForce = store.reminders.length;
+res = await TaskStore.generateToday({ listName: LIST, pool, target: 3, force: true });
+ok(store.reminders.length === beforeForce,
+   `force 重跑后总数不变（${beforeForce} → ${store.reminders.length}），不会越堆越多`);
+ok(res.replaced === 3, "重跑时把今天旧的 3 条替换掉了（replaced=" + res.replaced + "）");
+// 再跑两次，确认不会累积
+await TaskStore.generateToday({ listName: LIST, pool, target: 3, force: true });
+await TaskStore.generateToday({ listName: LIST, pool, target: 3, force: true });
+ok(store.reminders.length === beforeForce, "连跑三次仍然只有 " + beforeForce + " 条");
+
 // 场景 C：勾选状态能读回来（这就是「完成后不会消失」的验证）
 store.reminders[0].isCompleted = true;
 let tasks = await TaskStore.readTodayTasks({ listName: LIST });

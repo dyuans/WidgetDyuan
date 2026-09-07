@@ -116,6 +116,14 @@ async function generateToday({ listName, pool, target = 3, force = false, includ
     }
   });
 
+  // ── force 重跑：先把今天已生成的清掉，否则会越堆越多 ──
+  // 下面统计「已有安排」时特意排除了本列表，所以不清就会重复补满 TARGET。
+  let replaced = 0;
+  if (force) {
+    const mineToday = await Reminder.allDueToday([cal]);
+    mineToday.forEach((r) => { r.remove(); replaced++; });
+  }
+
   // ── 数已有的：日历事件 + 不属于本列表的今日提醒事项 ──
   let existing = 0;
   if (includeCalendar) {
@@ -149,7 +157,7 @@ async function generateToday({ listName, pool, target = 3, force = false, includ
   const newHistory = picked.map((t) => t.text).concat(history).slice(0, HISTORY_MAX);
   Core.saveLocal(SNAPSHOT, { date: today, tasks, history: newHistory });
 
-  return { status: "generated", tasks, added: picked.length, existing, cleaned };
+  return { status: "generated", tasks, added: picked.length, existing, cleaned, replaced };
 }
 
 module.exports = { readTodayTasks, readSnapshot, readForWidget, generateToday, SNAPSHOT };
