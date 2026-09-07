@@ -75,9 +75,22 @@ try {
 }
 
 // ─── 背景照片 ──────────────────────────────────────────────────
+/** 鸭子类型判断：像 Image 就当 Image 用 */
+function looksLikeImage(x) {
+  return !!(x && x.size && typeof x.size.width === "number" && x.size.height > 0);
+}
+
 async function grabSourceImage() {
-  // ① 快捷指令用「运行脚本」动作直接把图片当输入传进来
+  // ① 快捷指令传图片进来。视快捷指令怎么配，可能落在两个不同的字段：
+  //    args.images            —— 走「输入」通道
+  //    args.shortcutParameter —— 走「Parameter」通道
+  //    两个都收，省得配错。
   if (args.images && args.images.length > 0) return args.images[0];
+  if (looksLikeImage(args.shortcutParameter)) return args.shortcutParameter;
+  if (Array.isArray(args.shortcutParameter)) {
+    const img = args.shortcutParameter.find(looksLikeImage);
+    if (img) return img;
+  }
 
   // ② 或者快捷指令用「存储文件」放到 iCloud/Scriptable/ 下
   try {
@@ -106,7 +119,8 @@ if (BG_ENABLED) {
     const src = await grabSourceImage();
     if (src) {
       Core.saveImage("bg", Core.makeBackground(src, BG_BLUR, BG_DARKEN));
-      bgNote = "背景已更新";
+      bgNote = "背景已更新（" + Math.round(src.size.width) + "×" +
+               Math.round(src.size.height) + "）";
     } else {
       bgNote = Core.loadImage("bg") ? "背景沿用上次" : "暂无背景（用渐变）";
     }
