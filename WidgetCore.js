@@ -158,7 +158,77 @@ function pickRandomOfDay(pool, n, exclude, keyOf) {
 }
 
 // ════════════════════════════════════════════════════════════════
-//  四、渲染
+//  四、背景图处理
+//  小组件一天被唤醒几十次，绝不能在里面做图像处理。
+//  这些函数只在每天早上的 TaskGen 里跑一次，把成品图存盘；
+//  组件只负责 loadImage 读现成的。
+// ════════════════════════════════════════════════════════════════
+
+const BG_W = 1200, BG_H = 560;   // 约 2.14:1，贴合中号组件比例
+
+/** 计算「缩放铺满并居中裁切」的绘制矩形 */
+function coverRect(srcW, srcH, dstW, dstH) {
+  const scale = Math.max(dstW / srcW, dstH / srcH);
+  const w = srcW * scale, h = srcH * scale;
+  return { x: (dstW - w) / 2, y: (dstH - h) / 2, w: w, h: h };
+}
+
+/**
+ * 模糊：Scriptable 没有模糊 API，唯一办法是「缩到极小再放大」，
+ * 靠 CoreGraphics 的插值糊掉细节。tinyW 越小越糊。
+ * 150 左右能保留形体（认得出是哪张照片），40 就基本只剩色调了。
+ */
+function blurImage(img, tinyW) {
+  const ratio = img.size.height / img.size.width;
+  const c = new DrawContext();
+  c.size = new Size(tinyW, Math.max(2, Math.round(tinyW * ratio)));
+  c.respectScreenScale = false;
+  c.opaque = true;
+  c.drawImageInRect(img, new Rect(0, 0, c.size.width, c.size.height));
+  return c.getImage();
+}
+
+/**
+ * 把一张照片加工成组件背景：裁切 → 模糊 → 压暗。
+ * @param {Image} img
+ * @param {number} blurWidth 模糊强度（缩到多少像素宽，越小越糊）
+ * @param {number} darken    压暗透明度 0~1
+ * @returns {Image}
+ */
+function makeBackground(img, blurWidth, darken) {
+  const small = blurImage(img, blurWidth === undefined ? 150 : blurWidth);
+  const ctx = new DrawContext();
+  ctx.size = new Size(BG_W, BG_H);
+  ctx.respectScreenScale = false;
+  ctx.opaque = true;
+  const r = coverRect(small.size.width, small.size.height, BG_W, BG_H);
+  ctx.drawImageInRect(small, new Rect(r.x, r.y, r.w, r.h));
+  ctx.setFillColor(new Color("#0a0c12", darken === undefined ? 0.45 : darken));
+  ctx.fillRect(new Rect(0, 0, BG_W, BG_H));
+  return ctx.getImage();
+}
+
+function imagePath(name) {
+  const fm = FileManager.local();
+  const dir = fm.joinPath(fm.documentsDirectory(), CACHE_DIR);
+  if (!fm.fileExists(dir)) fm.createDirectory(dir, true);
+  return fm.joinPath(dir, name + ".jpg");
+}
+
+function saveImage(name, img) {
+  try { FileManager.local().writeImage(imagePath(name), img); return true; }
+  catch (e) { return false; }
+}
+
+function loadImage(name) {
+  try {
+    const fm = FileManager.local(), p = imagePath(name);
+    return fm.fileExists(p) ? fm.readImage(p) : null;
+  } catch (e) { return null; }
+}
+
+// ════════════════════════════════════════════════════════════════
+//  五、渲染
 // ════════════════════════════════════════════════════════════════
 
 const THEME_DEFAULTS = {
@@ -171,6 +241,8 @@ const THEME_DEFAULTS = {
   tagBg: "#1a1508",
   line: "#f5c842",
   done: "#6b6459",          // 已完成任务的文字色
+  panelBg: "#090b10",       // 任务面板底色
+  panelAlpha: 0.69,
 };
 
 function color(hex, alpha) {
@@ -198,23 +270,53 @@ function addDivider(stack, t) {
   line.addSpacer();
 }
 
+/** 压在照片上的文字加投影，纯色底则不加（避免发脏） */
+function shade(txt, on) {
+  if (!on) return txt;
+  txt.shadowColor = new Color("#000000", 0.5);
+  txt.shadowOffset = new Point(0, 1);
+  txt.shadowRadius = 2.5;
+  return txt;
+}
+
 /** 一行任务：○ 未完成 / ✓ 已完成（用可着色的字符，不用 emoji） */
-function addTaskRow(stack, task, t, fontSize) {
+function addTaskRow(stack, task, t, fontSize, onPhoto) {
   const row = stack.addStack();
   row.layoutHorizontally();
   row.centerAlignContent();
 
   const mark = row.addText(task.done ? "✓" : "○");
   mark.font = Font.boldSystemFont(fontSize);
-  mark.textColor = color(task.done ? t.accent : t.textSecondary, task.done ? 1 : 0.75);
+  mark.textColor = color(task.done ? t.accent : t.textSecondary, task.done ? 1 : 0.8);
 
-  row.addSpacer(5);
+  row.addSpacer(6);
 
   const label = row.addText(task.title);
   label.font = Font.systemFont(fontSize);
   label.textColor = task.done ? color(t.done) : color(t.textPrimary);
   label.lineLimit = 1;
   label.minimumScaleFactor = 0.65;
+  if (onPhoto && !task.done) shade(label, true);
+}
+
+/**
+ * 任务清单：传了 taskPanel 就套一块半透明圆角面板。
+ * 照片背景下这块面板是可读性的关键——照片亮度不可控，
+ * 局部保护比整张压暗更划算。
+ */
+function addTasks(stack, view, t, fontSize, onPhoto) {
+  const list = view.tasks.slice(0, 3);
+  if (!view.taskPanel) {
+    list.forEach((task) => addTaskRow(stack, task, t, fontSize, onPhoto));
+    return;
+  }
+  const panel = stack.addStack();
+  panel.layoutVertically();
+  panel.backgroundColor = color(t.panelBg, t.panelAlpha);
+  panel.cornerRadius = 9;
+  panel.setPadding(7, 10, 7, 10);
+  panel.spacing = 3;
+  list.forEach((task) => addTaskRow(panel, task, t, fontSize, false));
 }
 
 function progressText(tasks) {
@@ -312,8 +414,13 @@ function buildLockscreen(widget, view, t) {
 
 // ─── 桌面小号（Small）───────────────────────────────────────────
 function buildSmall(widget, view, t) {
-  widget.backgroundColor = color(t.gradient[1]);
-  applyGradient(widget, t);
+  const photo = !!view.backgroundImage;
+  if (photo) {
+    widget.backgroundImage = view.backgroundImage;
+  } else {
+    widget.backgroundColor = color(t.gradient[1]);
+    applyGradient(widget, t);
+  }
 
   const main = widget.addStack();
   main.layoutVertically();
@@ -362,7 +469,7 @@ function buildSmall(widget, view, t) {
   main.addSpacer();
 
   if (hasTasks) {
-    view.tasks.slice(0, 3).forEach((task) => addTaskRow(main, task, t, 9.5));
+    addTasks(main, view, t, 9.5, photo);
   } else if (view.tag) {
     addTag(main, { tag: view.tag, tagAccent: view.tagAccent }, t, 9);
   }
@@ -370,13 +477,19 @@ function buildSmall(widget, view, t) {
 
 // ─── 桌面中号（Medium）──────────────────────────────────────────
 function buildMedium(widget, view, t) {
-  widget.backgroundColor = color(t.gradient[1]);
-  applyGradient(widget, t);
+  // 有背景照片就用照片，否则回到渐变
+  const photo = !!view.backgroundImage;
+  if (photo) {
+    widget.backgroundImage = view.backgroundImage;
+  } else {
+    widget.backgroundColor = color(t.gradient[1]);
+    applyGradient(widget, t);
+  }
 
   const main = widget.addStack();
   main.layoutVertically();
   main.setPadding(14, 16, 14, 16);
-  main.spacing = 5;
+  main.spacing = photo ? 4 : 5;
 
   const head = main.addStack();
   head.layoutHorizontally();
@@ -385,11 +498,13 @@ function buildMedium(widget, view, t) {
     const ic = head.addText(view.icon);
     ic.font = Font.boldSystemFont(11);
     ic.textColor = color(t.seal);
+    shade(ic, photo);
     head.addSpacer(5);
   }
   const title = head.addText(view.title);
   title.font = Font.boldSystemFont(11);
-  title.textColor = color(t.accent);
+  title.textColor = photo ? color(t.textPrimary, 0.88) : color(t.accent);
+  shade(title, photo);
 
   head.addSpacer();
 
@@ -398,6 +513,7 @@ function buildMedium(widget, view, t) {
     const p = head.addText(prog);
     p.font = Font.boldSystemFont(10);
     p.textColor = color(t.accent);
+    shade(p, photo);
     head.addSpacer(6);
   }
 
@@ -405,25 +521,33 @@ function buildMedium(widget, view, t) {
   df.dateFormat = "M月d日";
   const date = head.addText(df.string(new Date()));
   date.font = Font.systemFont(10);
-  date.textColor = color(t.textSecondary);
+  date.textColor = photo ? color(t.textPrimary, 0.72) : color(t.textSecondary);
+  shade(date, photo);
 
-  addDivider(main, t);
-  main.addSpacer(1);
+  // 照片背景下不画分隔线——照片本身已经提供了层次，再画线就脏了
+  if (!photo) {
+    addDivider(main, t);
+    main.addSpacer(1);
+  } else {
+    main.addSpacer(3);
+  }
 
   const hasTasks = view.tasks && view.tasks.length > 0;
 
   const q = main.addText(view.primary);
-  q.font = Font.systemFont(view.primaryFont || (hasTasks ? 13 : 15));
+  q.font = Font.systemFont(view.primaryFont || (photo ? 17 : hasTasks ? 13 : 15));
   q.textColor = color(t.textPrimary);
   q.lineLimit = view.primaryLines || 2;
   q.minimumScaleFactor = 0.6;
+  shade(q, photo);
 
   if (view.secondary) {
     const s = main.addText(view.secondary);
     s.font = Font.systemFont(hasTasks ? 9 : 9.5);
-    s.textColor = color(t.subtle);
+    s.textColor = photo ? color(t.textPrimary, 0.7) : color(t.subtle);
     s.lineLimit = hasTasks ? 1 : 2; // 有任务时让位给清单，没任务时给长拼音留两行
     s.minimumScaleFactor = 0.7;
+    shade(s, photo);
   }
 
   if (view.detail) {
@@ -438,7 +562,7 @@ function buildMedium(widget, view, t) {
   main.addSpacer();
 
   if (hasTasks) {
-    view.tasks.slice(0, 3).forEach((task) => addTaskRow(main, task, t, 11));
+    addTasks(main, view, t, 11, photo);
   } else if (view.tag) {
     addTag(main, view, t, 10);
   }
@@ -465,7 +589,8 @@ function render(widget, view, theme, family) {
 }
 
 module.exports = {
-  loadData, loadLocal, saveLocal,
+  loadData, loadLocal, saveLocal, saveImage, loadImage,
+  coverRect, blurImage, makeBackground, BG_W, BG_H,
   dayOfYear, absoluteDay, dateKey, pickOfDay, pickRandomOfDay, seededRandom,
   render, THEME_DEFAULTS,
 };

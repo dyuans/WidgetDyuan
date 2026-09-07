@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+
+# Claude 桌面端存放对话里文件的目录（效果图之类，不属于代码）
+Claude outputs/
+
+# 构建/依赖
+node_modules/
+*.log
+__pycache__/

@@ -18,6 +18,15 @@ const LIST_NAME = "地球Online";   // 专用提醒事项列表，跟你真正�
 const TARGET = 3;                  // 今日任务总数（含日历已有的安排）
 const INCLUDE_CALENDAR = true;     // 日历事件是否占名额
 
+// ─── 背景照片 ──────────────────────────────────────────────────
+// 照片由「快捷指令」从相册取好后传进来（见 README）。
+// 这里做全部加工：裁切 → 模糊 → 压暗 → 存盘，组件只读成品。
+const BG_ENABLED = true;
+const BG_BLUR = 150;    // 缩到多少像素宽再放大。越小越糊；150 能认出是哪张照片
+const BG_DARKEN = 0.45; // 压暗程度 0~1。觉得太暗就调到 0.35
+// 快捷指令若用「存储文件」方式，把照片存到 iCloud/Scriptable 下的这个名字
+const BG_DROP_FILE = "widget-bg-source.jpg";
+
 // 想只用一种风格，把不要的那行删掉即可
 const FLAVORS = [
   { key: "earth", file: "tasks-earth.json" },
@@ -65,6 +74,47 @@ try {
   result = { status: "error", error: String(e), tasks: [] };
 }
 
+// ─── 背景照片 ──────────────────────────────────────────────────
+async function grabSourceImage() {
+  // ① 快捷指令用「运行脚本」动作直接把图片当输入传进来
+  if (args.images && args.images.length > 0) return args.images[0];
+
+  // ② 或者快捷指令用「存储文件」放到 iCloud/Scriptable/ 下
+  try {
+    const fm = FileManager.iCloud();
+    const p = fm.joinPath(fm.documentsDirectory(), BG_DROP_FILE);
+    if (fm.fileExists(p)) {
+      if (!fm.isFileDownloaded(p)) await fm.downloadFileFromiCloud(p);
+      return fm.readImage(p);
+    }
+  } catch (e) { /* iCloud 不可用就算了 */ }
+
+  // ③ 手动在 App 里跑、且还没有任何背景时，让你挑一张试效果
+  if (config.runsInApp && !Core.loadImage("bg")) {
+    const a = new Alert();
+    a.title = "还没有背景照片";
+    a.message = "从相册挑一张试试效果？正式使用时由快捷指令自动提供。";
+    a.addAction("挑一张"); a.addCancelAction("跳过");
+    if ((await a.presentAlert()) === 0) return await Photos.fromLibrary();
+  }
+  return null;
+}
+
+let bgNote = "";
+if (BG_ENABLED) {
+  try {
+    const src = await grabSourceImage();
+    if (src) {
+      Core.saveImage("bg", Core.makeBackground(src, BG_BLUR, BG_DARKEN));
+      bgNote = "背景已更新";
+    } else {
+      bgNote = Core.loadImage("bg") ? "背景沿用上次" : "暂无背景（用渐变）";
+    }
+  } catch (e) {
+    bgNote = "背景处理失败：" + e;
+  }
+}
+
 // ─── 反馈 ──────────────────────────────────────────────────────
 if (config.runsInApp) {
   const a = new Alert();
@@ -83,14 +133,16 @@ if (config.runsInApp) {
       "\n\n已有安排 " + (result.existing === undefined ? "—" : result.existing) +
       " 条，补充 " + result.added +
       " 条" + (result.cleaned ? "，清理过期 " + result.cleaned + " 条" : "") +
-      "\n任务库共 " + pool.length + " 条";
+      "\n任务库共 " + pool.length + " 条" +
+      (bgNote ? "\n" + bgNote : "");
   }
   a.addAction("好");
   await a.present();
 } else {
   // 从快捷指令触发时，把结果回传给快捷指令（可选，用于调试）
   Script.setShortcutOutput(
-    result.status + " / added=" + result.added + " / total=" + (result.tasks || []).length
+    result.status + " / added=" + result.added +
+      " / total=" + (result.tasks || []).length + " / " + bgNote
   );
 }
 

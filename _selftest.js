@@ -11,20 +11,28 @@ fs.rmSync(TMP, { recursive: true, force: true });
 class Color { constructor(hex, a = 1) { this.hex = hex; this.a = a; } }
 class Size { constructor(w, h) { this.w = w; this.h = h; } }
 class LinearGradient { constructor() { this.colors = []; this.locations = []; } }
+class Point { constructor(x, y) { this.x = x; this.y = y; } }
+class Rect { constructor(x, y, w, h) { Object.assign(this, { x, y, w, h }); } }
 const Font = new Proxy({}, { get: () => (s) => ({ size: s }) });
 class DateFormatter { constructor() { this.dateFormat = ""; } string() { return "8月24日"; } }
 
 let drawn = [];
+let panels = [];
 function makeStack() {
-  return {
+  const st = {
     layoutVertically() {}, layoutHorizontally() {}, centerAlignContent() {},
     setPadding() {}, addSpacer() {},
-    addStack() { return makeStack(); },
+    addStack() { const c = makeStack(); if (c.cornerRadius) panels.push(c); return c; },
     addText(t) { drawn.push(String(t)); return {}; },
   };
+  Object.defineProperty(st, "cornerRadius", {
+    get() { return this._cr; },
+    set(v) { this._cr = v; if (panels.indexOf(this) < 0) panels.push(this); },
+  });
+  return st;
 }
 class ListWidget {
-  constructor() { this.backgroundColor = null; }
+  constructor() { this.backgroundColor = null; this.backgroundImage = null; this.backgroundGradient = null; }
   addStack() { return makeStack(); }
 }
 class FileManager {
@@ -79,7 +87,7 @@ const modules = {};
 function loadModule(name) {
   if (modules[name]) return modules[name];
   const sandbox = {
-    Color, Size, LinearGradient, Font, DateFormatter, ListWidget, FileManager,
+    Color, Size, LinearGradient, Point, Rect, Font, DateFormatter, ListWidget, FileManager,
     Calendar, CalendarEvent, Reminder,
     importModule: loadModule,
     module: { exports: {} }, console, Date, Math, JSON, Object, Array, String, Number, Set, Promise,
@@ -348,6 +356,49 @@ ok(drawn.indexOf(longest.key) >= 0 && drawn.indexOf(longest.text) < 0,
 const seen81 = new Set();
 for (let i = 0; i < 81; i++) seen81.add(Core.absoluteDay(new Date(2026, 8, 1 + i)) % 81);
 ok(seen81.size === 81, "81 天内 81 章全部轮到");
+
+// ════════ 6. 照片背景 ════════
+console.log("\n【照片背景】");
+
+// coverRect：缩放铺满并居中，绝不留白边
+[[1024, 768], [768, 1024], [1200, 560], [4000, 3000]].forEach(([sw, sh]) => {
+  const r = Core.coverRect(sw, sh, 1200, 560);
+  const covers = r.w >= 1200 - 0.01 && r.h >= 560 - 0.01;
+  const centered = Math.abs((r.x + r.w / 2) - 600) < 0.01 && Math.abs((r.y + r.h / 2) - 280) < 0.01;
+  ok(covers && centered, `coverRect ${sw}×${sh} → 铺满且居中（w=${r.w.toFixed(0)} h=${r.h.toFixed(0)}）`);
+});
+// 竖幅照片裁切损失
+const rp = Core.coverRect(1024, 768, 1200, 560);
+console.log("   4:3 照片进 2.14:1 组件，上下各裁掉 %d%%",
+  Math.round(Math.abs(rp.y) / rp.h * 100));
+
+const fakeImg = { size: { width: 1024, height: 768 } };
+const photoView = {
+  icon: "✦", title: "每日重启",
+  primary: "行到水穷处，坐看云起时。", secondary: "— 王维《终南别业》",
+  backgroundImage: fakeImg, taskPanel: true,
+  tasks: [
+    { title: "10:00 部门周会", done: true, kind: "主线" },
+    { title: "喝完一整杯水", done: false, kind: "支线" },
+    { title: "今天有一次不解释理由", done: false, kind: "支线" },
+  ],
+};
+
+drawn = []; panels = [];
+let w1 = new ListWidget();
+Core.render(w1, photoView, {}, "medium");
+ok(w1.backgroundImage === fakeImg, "照片被设为组件背景图");
+ok(w1.backgroundGradient === null, "有照片时不再画渐变");
+ok(panels.length > 0, "任务被套进圆角面板（照片亮度不可控，局部保护比整张压暗划算）");
+ok(drawn.indexOf("✓") >= 0 && drawn.indexOf("○") >= 0, "勾选状态照常显示");
+ok(drawn.indexOf("1/3") >= 0, "进度照常显示");
+
+// 没有照片时必须原样退回渐变
+drawn = []; panels = [];
+let w2 = new ListWidget();
+Core.render(w2, Object.assign({}, photoView, { backgroundImage: null, taskPanel: false }), {}, "medium");
+ok(w2.backgroundImage === null && w2.backgroundGradient !== null, "没有照片时退回渐变，不留空背景");
+ok(panels.length === 0, "无照片时不套面板，保持原来的样子");
 
 console.log(process.exitCode ? "\n❌ 有用例失败" : "\n✅ 全部通过");
 })();
